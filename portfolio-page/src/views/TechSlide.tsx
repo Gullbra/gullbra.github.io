@@ -4,7 +4,7 @@ import '../styles/views.tech.css'
 
 const TechSlide = () => {
   return (
-    <section className='main__slide --tech-slide'>Tech</section>
+    <section className='main__slide --tech-slide' id='tech-slide'>Tech</section>
   )
 }
 

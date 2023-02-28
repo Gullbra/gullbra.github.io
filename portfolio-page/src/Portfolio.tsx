@@ -17,6 +17,10 @@ function Portfolio() {
       <Layout>
         <InfoSlide/>
         <TechSlide/>
+        <ProjectsSlide/>
+        <JourneySlide/>
+        <AboutSlide/>
+        <ContactSlide/>
       </Layout>
     </>
   );
