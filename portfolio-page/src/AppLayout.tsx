@@ -21,12 +21,12 @@ const Layout = ({children}:{children: React.ReactNode}) => {
         //ref={refMain}
         >{children}</main>
       <nav className='site__bottom-nav-bar'>
-        <HashLink smooth to="#about-slide">To about!</HashLink>
+        {/* <HashLink smooth to="#about-slide">To about!</HashLink>
         <HashLink smooth to="#contact-slide">To contact!</HashLink>
         <HashLink smooth to="#info-slide">To info!</HashLink>
         <HashLink smooth to="#journey-slide">To journey!</HashLink>
         <HashLink smooth to="#projects-slide">To projects!</HashLink>
-        <HashLink smooth to="#tech-slide">To tech!</HashLink>
+        <HashLink smooth to="#tech-slide">To tech!</HashLink> */}
         {/* 
         // TODO: Modify ./utils/useScrollPosition with this
         <button type='button' onClick={() => {

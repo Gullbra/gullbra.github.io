@@ -3,7 +3,7 @@ import React from 'react';
 import './styles/base.css';
 
 import Layout from './AppLayout'
-import InfoSlide from './views/InfoSlide'
+import GreetingSlide from './views/GreetingSlide'
 import TechSlide from './views/TechSlide'
 import ProjectsSlide from './views/ProjectsSlide'
 import JourneySlide from './views/JourneySlide'
@@ -17,7 +17,7 @@ function Portfolio() {
   return (
     <>
       <Layout>
-        <InfoSlide/>
+        <GreetingSlide/>
         <TechSlide/>
         <ProjectsSlide/>
         <JourneySlide/>
