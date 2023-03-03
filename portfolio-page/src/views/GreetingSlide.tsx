@@ -11,7 +11,7 @@ const GreetingSlide = () => {
         <p className="header__p-name">Martin Gullbrandsson</p>
 
         <flex-wrapper class="header__flex-item">
-          {['tech', 'projects', 'journey', 'about'].map(slide => (
+          {['tech', 'projects', 'about'].map(slide => (
             <HashLink className="header__links"
               smooth 
               key={`${slide}`} 
@@ -51,17 +51,13 @@ const Greeting = () => {
         
         <div className="f-item-text__btn-container">
           <HashLinkButton destination="projects" title="My Projects"/>
-          <HashLinkButton destination="tech" title="My Tech"/>
+          <HashLinkButton destination="tech" title="My Skills"/>
           <HashLinkButton destination="about" title="More About Me"/>
         </div>
-        {/* 
-        */}
-
-
       </flex-item>
 
-      <flex-item>
-        hey
+      <flex-item class="article__f-item-image">
+        <img className="f-item-image__image" src="./imageedit_1_7427655471.png" alt="" />
       </flex-item>
     </article>
   )

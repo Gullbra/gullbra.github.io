@@ -13,7 +13,7 @@
 
 
 .--greeting-slide {
-  background: bottom / cover no-repeat url("../../public/annie-spratt-QckxruozjRg-unsplash.jpg");
+  background: bottom / cover no-repeat url("../../public/annie-spratt-QckxruozjRg-unsplash.png");
 }
 
 
@@ -95,4 +95,20 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.article__f-item-image {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.f-item-image__image {
+  flex-shrink: 0;
+  max-width: 75%;
+  max-height: 75%;
+
+  border-radius: 10rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }

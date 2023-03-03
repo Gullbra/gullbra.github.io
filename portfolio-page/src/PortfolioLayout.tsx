@@ -1,5 +1,5 @@
-import react, { useState, useEffect, useRef} from 'react'
-import { HashLink } from 'react-router-hash-link'
+// import react, { useState, useEffect, useRef} from 'react'
+// import { HashLink } from 'react-router-hash-link'
 
 import './styles/layout.css'
 
