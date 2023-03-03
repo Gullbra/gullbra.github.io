@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './styles/base.css';
+import './styles/components.css'
 
 import Layout from './AppLayout'
 import GreetingSlide from './views/GreetingSlide'
@@ -15,16 +16,14 @@ import ContactSlide from './views/ContactSlide'
 function Portfolio() {
 
   return (
-    <>
-      <Layout>
-        <GreetingSlide/>
-        <TechSlide/>
-        <ProjectsSlide/>
-        <JourneySlide/>
-        <AboutSlide/>
-        <ContactSlide/>
-      </Layout>
-    </>
+    <Layout>
+      <GreetingSlide/>
+      <TechSlide/>
+      <ProjectsSlide/>
+      <JourneySlide/>
+      <AboutSlide/>
+      <ContactSlide/>
+    </Layout>
   );
 }
 

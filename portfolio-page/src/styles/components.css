@@ -1,0 +1,23 @@
+.hash-button {
+  padding: 0.5rem 0.7rem;
+  background-color: var(--color-green-darker);
+  text-decoration: none;
+  color: white;
+  border-radius: 0.7rem;
+  cursor: pointer;
+
+  font-size: 14px;
+}
+
+.hash-button:hover {
+  background-color: var(--color-green-medium);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.hash-button:active {
+  background-color: var(--color-green-darkest);
+}
+
+.hash-button:focus {
+  outline: 1px solid var(--color-green-darkest);
+}

@@ -7,7 +7,9 @@
   font-family:'Courier New', Courier, monospace;
 }
 
-react-render {
+react-render,
+flex-wrapper,
+flex-item {
   display: block;
   
 
