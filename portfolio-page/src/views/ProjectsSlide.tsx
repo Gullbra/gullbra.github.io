@@ -81,8 +81,27 @@ const ProjectsSlide = () => {
       <h2 className='projects-slide__title'> projects </h2>
 
       <div className='projects-slide__filter-bar'>
-        {Object.keys(projectState.languageKvp).map(lang => (
-          <span key={lang}>{`${lang}: ${projectState.languageKvp[lang]}`}</span>
+        {Object.keys(projectState).length && Object.keys(projectState.languageKvp).map(lang => (
+          <span className='filter-btn-btn'
+            key={lang}>
+            {`${lang}`} 
+            
+            <span className='filter-btn-count'>
+              {`${projectState.languageKvp[lang]}`}
+            </span>
+          </span>
+        ))}
+      </div>
+      <div className='projects-slide__filter-bar'>
+        {Object.keys(projectState).length && Object.keys(projectState.toolsKvp).map(tool => (
+          <span className='filter-btn-btn'
+            key={tool}>
+            {`${tool}`} 
+            
+            <span className='filter-btn-count'>
+              {`${projectState.toolsKvp[tool]}`}
+            </span>
+          </span>
         ))}
       </div>
 
@@ -98,8 +117,13 @@ const ProjectsSlide = () => {
   )
 }
 
-const ProjectCard = () => {
+const FilterButton = ({key, value}: {key: string, value: number}) => {
+  return (
+    <button></button>
+  )
+}
 
+const ProjectCard = () => {
   return (
     <article className='card-container__project-card'>
       <div className='project-card__image'> imageplaceholder </div>

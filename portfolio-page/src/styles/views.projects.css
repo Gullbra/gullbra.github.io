@@ -24,11 +24,50 @@
   margin-top: 3rem;
 
 }
+
+/** Filter bar */
 .projects-slide__filter-bar {
   border: 1px solid black;
 
+  display: flex;
+  flex-direction: row;
+
   margin-top: 3rem;
 }
+
+.filter-btn-btn {
+  position: relative;
+  background-color: #707E62;
+  color: white;
+  border-radius: 0.5rem;
+
+  padding: 0.3rem 0.5rem;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
+  
+}
+
+.filter-btn-count {
+  position: absolute;
+  background-color: #414A39;
+  color: white;
+  border-radius: 100%;
+
+  font-size: 0.6rem;
+
+  width: 1rem;
+  height: 1rem;
+  top: -0.4rem;
+  right: -0.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/** Card Container */
+
 .projects-slide__card-container {
   border: 1px solid black;
 
@@ -121,4 +160,3 @@
 .fa-icon-overrides-projectcard {
   color: inherit;
 }
-
