@@ -65,11 +65,9 @@ const Greeting = () => {
 
 const HashLinkButton = ({title, destination}:{title: string, destination: string}) => {
   return(
-    <>
-      <HashLink className="hash-button"
-        smooth
-        to={`#${destination}-slide`}>{title}
-      </HashLink>
-    </>
+    <HashLink className="hash-button"
+      smooth
+      to={`#${destination}-slide`}>{title}
+    </HashLink>
   )
 }
