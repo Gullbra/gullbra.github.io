@@ -1,4 +1,8 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faMicrophoneLines } from '@fortawesome/free-solid-svg-icons'
 
 import '../styles/views.projects.css'
 
@@ -32,8 +36,8 @@ const ProjectCard = () => {
       <p className='project-card__desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod saepe error inventore architecto molestias eius aspernatur?</p>
 
       <div className='project-card__btn-container'>
-        <button>git</button>
-        <button>live</button>
+        <button className='btn-container__project-buttons' title='Github Repo'> <FontAwesomeIcon icon={faGithub} className="fa-icon-overrides-projectcard"/> </button>
+        <button className='btn-container__project-buttons' title='Deployed Site'> <FontAwesomeIcon icon={faMicrophoneLines} className="fa-icon-overrides-projectcard"/> </button>
       </div>
     </article>
   )

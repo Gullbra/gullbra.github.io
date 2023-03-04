@@ -1,9 +1,12 @@
 import React from "react";
 import { HashLink } from "react-router-hash-link";
+import { useMediaQuery } from "react-responsive";
 
 import '../styles/views.greeting.css'
 
 const GreetingSlide = () => {
+  const isNotMobile = useMediaQuery({minWidth : 500})
+
   return (
     <section className="main__slide --greeting-slide" id='info-slide'>
       <header className='slide__header'>
@@ -11,7 +14,7 @@ const GreetingSlide = () => {
         <p className="header__p-name">Martin Gullbrandsson</p>
 
         <flex-wrapper class="header__flex-item">
-          {['tech', 'projects', 'about'].map(slide => (
+          {isNotMobile && ['tech', 'projects', 'about'].map(slide => (
             <HashLink className="header__links"
               smooth 
               key={`${slide}`} 

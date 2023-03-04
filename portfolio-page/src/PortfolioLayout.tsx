@@ -1,6 +1,7 @@
 // import react, { useState, useEffect, useRef} from 'react'
 // import { HashLink } from 'react-router-hash-link'
 
+
 import './styles/layout.css'
 
 const Layout = ({children}:{children: React.ReactNode}) => {
