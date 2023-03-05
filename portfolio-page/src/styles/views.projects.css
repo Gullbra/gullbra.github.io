@@ -1,16 +1,3 @@
-:root {
-  --color-green-darkest: #414A39;
-  --color-green-darker: #5B6650;
-  --color-green-medium: #707E62;
-  --color-green-light: #C9DBD2;
-  --color-brown-dark: #855B4F;
-  --color-brown-light: #A59384;
-
-  --site-margin-left: 4rem;
-  --site-margin-right: 4rem;
-  --height-header: 4rem;
-}
-
 .--projects-slide {
   background-color: var(--color-green-light);
 
@@ -37,15 +24,26 @@
 
 .filter-btn-btn {
   position: relative;
-  background-color: #707E62;
+  background-color: var(--color-green-darker);
   color: white;
   border-radius: 0.5rem;
+  border: none;
 
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 0.7rem;
 
   margin-left: 1rem;
   margin-right: 1rem;
-  
+  cursor: pointer;
+}
+.filter-btn-btn:hover {
+  background-color: var(--color-green-medium);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.filter-btn-btn:active {
+  background-color: var(--color-green-darkest);
+}
+.filter-btn-btn:focus {
+  outline: 1px solid var(--color-green-darkest);
 }
 
 .filter-btn-count {
@@ -152,7 +150,7 @@
 
 .btn-container__project-buttons:hover { 
   color: var(--color-green-darkest);
-  border-color: var(--color-green-darkest);
+  /* border-color: var(--color-green-darkest); */
   background-color: var(--color-green-light);
   box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
 }

@@ -11,11 +11,6 @@ react-render,
 flex-wrapper,
 flex-item {
   display: block;
-  
-
-  /* height: 100vh;
-  width: 100vw;
-  overflow-y: scroll; */
 }
 
 :root {
@@ -26,11 +21,24 @@ flex-item {
   --color-brown-dark: #855B4F;
   --color-brown-light: #A59384;
 
-  --site-margin-left: 4rem;
-  --site-margin-right: 4rem;
+  --site-margin-left: 1rem;
+  --site-margin-right: 1rem;
   --height-header: 4rem;
+
+  font-size: 14px;
 }
 
+@media only screen and (min-width: 300px) {
+  :root {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 700px) {
+  :root {
+    --site-margin-left: 3rem;
+    --site-margin-right: 3rem;
+  }
+}
 /* 
 body {
   margin: 0;

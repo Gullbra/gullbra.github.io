@@ -1,8 +1,11 @@
 // import react, { useState, useEffect, useRef} from 'react'
-// import { HashLink } from 'react-router-hash-link'
+import { HashLink } from 'react-router-hash-link'
+import { useMediaQuery } from "react-responsive";
 
 
-import './styles/layout.css'
+
+import '../styles/layout.css'
+import '../styles/components.header.css'
 
 const Layout = ({children}:{children: React.ReactNode}) => {
   // TODO: Modify ./utils/useScrollPosition with this
@@ -17,6 +20,7 @@ const Layout = ({children}:{children: React.ReactNode}) => {
 
   return (
     <>
+      <Header/>
       <main className='site__main'
         // TODO: Modify ./utils/useScrollPosition with this
         //ref={refMain}
@@ -40,3 +44,28 @@ const Layout = ({children}:{children: React.ReactNode}) => {
 }
 
 export default Layout
+
+
+const Header = () => {
+  const isNotMobile = useMediaQuery({minWidth : 500})
+
+  return(
+    <header className='slide__header'>
+            
+      <p className="header__p-name">Martin Gullbrandsson</p>
+
+      <flex-wrapper class="header__flex-item">
+        {isNotMobile && ['tech', 'projects', 'about'].map(slide => (
+          <HashLink className="header__links"
+            smooth 
+            key={`${slide}`} 
+            to={`#${slide}-slide`}>{slide}
+          </HashLink>
+        ))}
+      
+        <p className="header__links">Contact</p>
+      </flex-wrapper>
+
+    </header>
+  )
+}

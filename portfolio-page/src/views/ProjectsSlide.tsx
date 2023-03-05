@@ -33,7 +33,7 @@ const ProjectsSlide = () => {
       const projects: IProject[] = [
         {  
           imageUrl: "",
-          title: "this is a project",
+          title: "this is project 1",
           desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod saepe error inventore architecto molestias eius aspernatur?",
           githubLink: "",
           liveLink: "",
@@ -43,7 +43,7 @@ const ProjectsSlide = () => {
         },
         {  
           imageUrl: "",
-          title: "this is a project",
+          title: "this is project 2",
           desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod saepe error inventore architecto molestias eius aspernatur?",
           githubLink: "",
           liveLink: "",
@@ -53,7 +53,7 @@ const ProjectsSlide = () => {
         },
         {  
           imageUrl: "",
-          title: "this is a project",
+          title: "this is project 3",
           desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod saepe error inventore architecto molestias eius aspernatur?",
           githubLink: "",
           liveLink: "",
@@ -82,53 +82,41 @@ const ProjectsSlide = () => {
 
       <div className='projects-slide__filter-bar'>
         {Object.keys(projectState).length && Object.keys(projectState.languageKvp).map(lang => (
-          <span className='filter-btn-btn'
-            key={lang}>
-            {`${lang}`} 
-            
-            <span className='filter-btn-count'>
-              {`${projectState.languageKvp[lang]}`}
-            </span>
-          </span>
+          <FilterButton key={lang} objKey={lang} value={projectState.languageKvp[lang]}/>
         ))}
       </div>
+
       <div className='projects-slide__filter-bar'>
         {Object.keys(projectState).length && Object.keys(projectState.toolsKvp).map(tool => (
-          <span className='filter-btn-btn'
-            key={tool}>
-            {`${tool}`} 
-            
-            <span className='filter-btn-count'>
-              {`${projectState.toolsKvp[tool]}`}
-            </span>
-          </span>
+          <FilterButton key={tool} objKey={tool} value={projectState.toolsKvp[tool]}/>
         ))}
       </div>
 
       <div className='projects-slide__card-container'> 
-        {/* card container */}
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
-      
+        {projectState.projects?.map(project => (
+          <ProjectCard key={project.title} project={project}/>
+        ))}      
       </div>
 
     </section>
   )
 }
 
-const FilterButton = ({key, value}: {key: string, value: number}) => {
+const FilterButton = ({objKey, value}: {objKey: string, value: number}) => {
   return (
-    <button></button>
+    <button className='filter-btn-btn'>
+      {objKey}
+      <div className='filter-btn-count'>{value}</div>
+    </button>
   )
 }
 
-const ProjectCard = () => {
+const ProjectCard = ({project}: {project: IProject}) => {
   return (
     <article className='card-container__project-card'>
       <div className='project-card__image'> imageplaceholder </div>
-      <h3 className='project-card__title'>this is a project</h3>
-      <p className='project-card__desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod saepe error inventore architecto molestias eius aspernatur?</p>
+      <h3 className='project-card__title'>{project.title}</h3>
+      <p className='project-card__desc'>{project.desc}</p>
 
       <div className='project-card__btn-container'>
         <button className='btn-container__project-buttons' title='Github Repo'> <FontAwesomeIcon icon={faGithub} className="fa-icon-overrides-projectcard"/> </button>

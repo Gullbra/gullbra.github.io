@@ -2,31 +2,14 @@ import React from "react";
 import { HashLink } from "react-router-hash-link";
 import { useMediaQuery } from "react-responsive";
 
-import '../styles/views.greeting.css'
+import '../styles/views.home.css'
+import '../styles/views.home.greeting.css'
+import '../styles/views.home.hash-button.css'
 
-const GreetingSlide = () => {
-  const isNotMobile = useMediaQuery({minWidth : 500})
-
+const HomeSlide = () => {
   return (
     <section className="main__slide --greeting-slide" id='info-slide'>
-      <header className='slide__header'>
-        
-        <p className="header__p-name">Martin Gullbrandsson</p>
 
-        <flex-wrapper class="header__flex-item">
-          {isNotMobile && ['tech', 'projects', 'about'].map(slide => (
-            <HashLink className="header__links"
-              smooth 
-              key={`${slide}`} 
-              to={`#${slide}-slide`}>{slide}
-            </HashLink>
-          ))}
-        
-          <p className="header__links">Contact</p>
-        </flex-wrapper>
-
-      </header>
-      
       <flex-wrapper class="greeting-slide__wrapper">
         <Greeting/>
       </flex-wrapper>
@@ -34,13 +17,15 @@ const GreetingSlide = () => {
     </section>
   )
 }
-
-export default GreetingSlide
-
+export default HomeSlide
 
 const Greeting = () => {
   return (
     <article className="wrapper__article">
+      <flex-item class="article__f-item-image">
+        <img className="f-item-image__image" src="./imageedit_1_7427655471.png" alt="Image of Face" />
+      </flex-item>
+
       <flex-item class="article__f-item-text">
         <p className="f-item-text__pre-header">
           Lorem, ipsum dolor sit amet
@@ -53,14 +38,10 @@ const Greeting = () => {
         </p> 
         
         <div className="f-item-text__btn-container">
-          <HashLinkButton destination="projects" title="My Projects"/>
           <HashLinkButton destination="tech" title="My Skills"/>
+          <HashLinkButton destination="projects" title="My Projects"/>
           <HashLinkButton destination="about" title="More About Me"/>
         </div>
-      </flex-item>
-
-      <flex-item class="article__f-item-image">
-        <img className="f-item-image__image" src="./imageedit_1_7427655471.png" alt="" />
       </flex-item>
     </article>
   )

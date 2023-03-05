@@ -1,0 +1,31 @@
+.slide__header {
+  width: 100%;
+  height: var(--height-header);
+  background-color: var(--color-green-darker);
+  color: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__p-name {
+  margin-left: var(--site-margin-left);
+}
+
+.header__flex-item {
+  margin-right: var(--site-margin-right);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header__links {
+  margin-left: 1rem;
+
+  display: block;
+  color: white;
+  text-decoration: none;
+}
