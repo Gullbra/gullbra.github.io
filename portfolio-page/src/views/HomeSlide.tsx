@@ -1,6 +1,5 @@
 import React from "react";
 import { HashLink } from "react-router-hash-link";
-import { useMediaQuery } from "react-responsive";
 
 import '../styles/views.home.css'
 import '../styles/views.home.greeting.css'
@@ -9,11 +8,14 @@ import '../styles/views.home.hash-button.css'
 const HomeSlide = () => {
   return (
     <section className="main__slide --greeting-slide" id='info-slide'>
-
+      {/* <background-filter class='background-filter'> */}
       <flex-wrapper class="greeting-slide__wrapper">
         <Greeting/>
+        <UnsplashAttribution/>
       </flex-wrapper>
 
+      {/* <UnsplashAttribution/> */}
+      {/* </background-filter> */}
     </section>
   )
 }
@@ -23,7 +25,7 @@ const Greeting = () => {
   return (
     <article className="wrapper__article">
       <flex-item class="article__f-item-image">
-        <img className="f-item-image__image" src="./imageedit_1_7427655471.png" alt="Image of Face" />
+        <img className="f-item-image__image" src="./imageedit_1_7427655471.png" alt="Headshot of Me; Martin Gullbrandsson" />
       </flex-item>
 
       <flex-item class="article__f-item-text">
@@ -53,5 +55,22 @@ const HashLinkButton = ({title, destination}:{title: string, destination: string
       smooth
       to={`#${destination}-slide`}>{title}
     </HashLink>
+  )
+}
+
+const UnsplashAttribution = () => {
+  return (
+    <div className="test-class-wr">
+      Background Image by 
+      <a className="test-class-a"
+        href="https://unsplash.com/@anniespratt?utm_source=your_app_name&utm_medium=referral">
+        Annie Spratt
+      </a> 
+      on 
+      <a className="test-class-a"
+        href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">
+        Unsplash
+      </a>
+    </div>
   )
 }

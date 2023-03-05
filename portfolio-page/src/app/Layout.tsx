@@ -47,19 +47,19 @@ export default Layout
 
 
 const Header = () => {
-  const isNotMobile = useMediaQuery({minWidth : 500})
+  const isTabletOrLarger = useMediaQuery({minWidth : 700})
 
   return(
     <header className='slide__header'>
             
-      <p className="header__p-name">Martin Gullbrandsson</p>
+      <h1 className="header__p-name">Martin Gullbrandsson</h1>
 
       <flex-wrapper class="header__flex-item">
-        {isNotMobile && ['tech', 'projects', 'about'].map(slide => (
+        {isTabletOrLarger && ['tech', 'projects', 'about'].map(slide => (
           <HashLink className="header__links"
             smooth 
             key={`${slide}`} 
-            to={`#${slide}-slide`}>{slide}
+            to={`#${slide}-slide`}>{slide[0].toUpperCase() + slide.substring(1)}
           </HashLink>
         ))}
       
