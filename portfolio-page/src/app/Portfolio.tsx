@@ -6,7 +6,7 @@ import '../styles/components.css'
 import Layout from './Layout'
 import HomeSlide from '../views/HomeSlide'
 import TechSlide from '../views/TechSlide'
-import ProjectsSlide from '../views/ProjectsSlide'
+// import ProjectsSlide from '../views/ProjectsSlide'
 // import AboutSlide from '../views/AboutSlide'
 // import ContactSlide from '../views/ContactSlide'
 

@@ -35,10 +35,30 @@ flex-item {
 }
 @media only screen and (min-width: 700px) {
   :root {
-    --site-margin-left: 3rem;
-    --site-margin-right: 3rem;
+    --site-margin-left: calc((100vw - (700px - 3 * 16px)) / 2);
+    --site-margin-right: calc((100vw - (700px - 3 * 16px)) / 2);
   }
 }
+@media only screen and (min-width: 900px) {
+  :root {
+    --site-margin-left: calc((100vw - (900px - 3 * 16px)) / 2);
+    --site-margin-right: calc((100vw - (900px - 3 * 16px)) / 2);
+  }
+}
+@media only screen and (min-width: 1100px) {
+  :root {
+    --site-margin-left: calc((100vw - (1100px - 4 * 16px)) / 2);
+    --site-margin-right: calc((100vw - (1100px - 4 * 16px)) / 2);
+  }
+}
+@media only screen and (min-width: 1300px) {
+  :root {
+    --site-margin-left: calc((100vw - (1300px - 4 * 16px)) / 2);
+    --site-margin-right: calc((100vw - (1300px - 4 * 16px)) / 2);
+  }
+}
+
+
 /* 
 body {
   margin: 0;

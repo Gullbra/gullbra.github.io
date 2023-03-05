@@ -1,3 +1,63 @@
 .--tech-slide {
-  background-color: azure;
+  background-color: var(--color-green-light);
+}
+.slide-tech__f-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.f-wrapper__slide-header {
+  margin-top: 2rem;
+}
+
+.--tech-slide-section {
+  margin-top: 1rem;
+}
+
+.--tech-slide-section-header {
+  text-align: center;
+}
+.lang-section__f-wrapper {
+  margin-top: 0.2rem;
+  display: flex;
+}
+.f-wrapper__lang-item {
+  padding-top: 0.3rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+}
+
+.f-wrapper__f-item-tools {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tools-section__f-wrapper {
+  margin-top: 0.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+@media only screen and (min-width: 700px) {
+  .f-wrapper__f-item-tools {
+    flex-direction: row;
+    justify-content: space-around;
+
+    width: 100vw;
+    padding-left: var(--site-margin-left);
+    padding-right: var(--site-margin-right);
+  }
+  .tools-section__f-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }
