@@ -1,22 +1,28 @@
 .filter-btn-btn {
   position: relative;
-  background-color: var(--color-green-darker);
+  background-color: var(--color-green-medium);
   color: white;
   border-radius: 0.5rem;
   border: none;
 
   padding: 0.3rem 0.7rem;
 
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-top: 0.5rem;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
   cursor: pointer;
 }
 .--active-filter {
-  color: blueviolet;
+  background-color: var(--color-green-darkest);
 }
 .filter-btn-btn:hover {
-  background-color: var(--color-green-medium);
+  background-color: var(--color-green-light);
+  color: black;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.--active-filter:hover {
+  background-color: var(--color-green-darker);
+  color: white;
 }
 .filter-btn-btn:active {
   background-color: var(--color-green-darkest);
@@ -27,7 +33,7 @@
 
 .filter-btn-count {
   position: absolute;
-  background-color: #414A39;
+  background-color: var(--color-green-darker);
   color: white;
   border-radius: 100%;
 

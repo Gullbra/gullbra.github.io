@@ -11,7 +11,7 @@
 }
 
 .f-wrapper__slide-header {
-  margin-top: 2rem;
+  margin-top: var(--slide-margin-top-bottom);
 }
 
 .--tech-slide-section {
@@ -40,7 +40,7 @@
   flex-direction: column;
 
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: var(--slide-margin-top-bottom);
 }
 
 .tools-section__f-wrapper {

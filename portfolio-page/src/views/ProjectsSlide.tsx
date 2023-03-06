@@ -119,10 +119,26 @@ const ProjectsSlide = () => {
     })
   }
 
+  const projectsToShow = projectState.projects?.filter(project => {
+    const langSelect = filters.shownLang.has("All-lang") || (() => {
+      for (let lang of project.languages)
+        if (filters.shownLang.has(lang))
+          return true
+    })()
+
+    const toolsSelect = filters.shownTools.has("All-tools") || (() => {
+      for (let tool of project.toolsAndFrameworks)
+        if (filters.shownTools.has(tool))
+          return true
+    })()
+
+    return toolsSelect && langSelect
+  })
+
   return(
     <section className='main__slide --projects-slide' id='projects-slide'>
       <flex-wrapper class="projects-slide__wrapper">
-        <h2 className='projects-slide__title'> projects </h2>
+        <h2 className='projects-slide__title'> Projects </h2>
 
         <div className='projects-slide__filter-bar'>
           {Object.keys(projectState).length && ["All", ...Object.keys(projectState.languageKvp)].map(lang => (
@@ -149,26 +165,12 @@ const ProjectsSlide = () => {
         </div>
 
         <div className='projects-slide__card-container'> 
-          {projectState.projects
-            ?.filter(project => {
-
-              const langSelect = filters.shownLang.has("All-lang") || (() => {
-                for (let lang of project.languages)
-                  if (filters.shownLang.has(lang))
-                    return true
-              })()
-
-              const toolsSelect = filters.shownTools.has("All-tools") || (() => {
-                for (let tool of project.toolsAndFrameworks)
-                  if (filters.shownTools.has(tool))
-                    return true
-              })()
-
-              return toolsSelect && langSelect
-            })
-            ?.map(project => (
-              <ProjectCard key={project.title} project={project}/>
-            ))}      
+          {projectsToShow.length > 0 
+            ? projectsToShow.map(project => (
+                <ProjectCard key={project.title} project={project}/>
+              ))
+            : <div className='--projects-404'>No projects matching filters</div>
+          }      
         </div>
 
         <UnsplashAttribution 

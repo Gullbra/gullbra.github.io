@@ -1,22 +1,11 @@
 .--projects-slide {
-  /* background-color: var(--color-green-light); */
-
-  /*
-  jason-goodman-Oalh2MojUuk-unsplash.jpg
-  */
-
   background: center / cover no-repeat url("../../public/austin-distel-rxpThOwuVgE-unsplash.jpg");
   background-attachment: fixed;
-
-  /* display: flex;
-  flex-direction: column;
-
-  align-items: center; */
 }
 
 .projects-slide__wrapper {
   position: relative;
-  background-color: rgba(201, 219, 210, 0.9);
+  background-color: rgba(201, 219, 210, 0.85);
 
   display: flex;
   flex-direction: column;
@@ -25,30 +14,39 @@
 }
 
 .projects-slide__title {
-  margin-top: 3rem;
+  margin-top: var(--slide-margin-top-bottom);
+  margin-bottom: 1rem;
 }
 
-/** Filter bar */
 .projects-slide__filter-bar {
-  border: 1px solid black;
-
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
-/** Card Container */
-
 .projects-slide__card-container {
-  border: 1px solid black;
+  margin-top: 3rem;
+  margin-bottom: var(--slide-margin-top-bottom);
 
-  margin-top: 2rem;
+  min-height: var(--height-project-card);
 
   display: flex;
   flex-direction: row;
 
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.--projects-404 {
+  align-self: center;
+  color: var(--color-green-darkest);
+  
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  text-shadow: var(--color-green-medium) 20px 0 20px;
 }
 

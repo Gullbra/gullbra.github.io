@@ -1,5 +1,5 @@
 .card-container__project-card {
-  height: 20rem;
+  height: var(--height-project-card);
   width: 16rem;
 
   /* border: 1px solid black; */
