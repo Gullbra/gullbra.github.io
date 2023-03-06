@@ -8,14 +8,10 @@ import '../styles/views.home.hash-button.css'
 const HomeSlide = () => {
   return (
     <section className="main__slide --greeting-slide" id='info-slide'>
-      {/* <background-filter class='background-filter'> */}
       <flex-wrapper class="greeting-slide__wrapper">
         <Greeting/>
         <UnsplashAttribution/>
       </flex-wrapper>
-
-      {/* <UnsplashAttribution/> */}
-      {/* </background-filter> */}
     </section>
   )
 }
@@ -25,7 +21,9 @@ const Greeting = () => {
   return (
     <article className="wrapper__article">
       <flex-item class="article__f-item-image">
-        <img className="f-item-image__image" src="./imageedit_1_7427655471.png" alt="Headshot of Me; Martin Gullbrandsson" />
+        <img className="f-item-image__image" 
+          src="./imageedit_1_7427655471.png" 
+          alt="Headshot of Me; Martin Gullbrandsson"/>
       </flex-item>
 
       <flex-item class="article__f-item-text">

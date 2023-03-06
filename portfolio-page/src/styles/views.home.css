@@ -1,5 +1,6 @@
 .--greeting-slide {
-  background: bottom / cover no-repeat url("../../public/annie-spratt-QckxruozjRg-unsplash.png");
+  background: center / cover no-repeat url("../../public/annie-spratt-QckxruozjRg-unsplash.png");
+  background-attachment: fixed;
 }
 
 .greeting-slide__wrapper{

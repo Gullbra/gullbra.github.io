@@ -1,15 +1,7 @@
 .--tech-slide {
   background-color: var(--color-green-light);
 }
-.--tech-slide:hover {
-  transition: all 0.3s ease-in-out;
-  border-bottom: 0.5rem solid var(--color-green-darker);
-  /* box-shadow: inset 0 -8px 8px 0 var(--color-green-darkest); */
-} 
-/* 
-background-color: var(--color-green-darker);
-color: white;
-*/
+
 
 .slide-tech__f-wrapper {
   display: flex;
@@ -27,9 +19,6 @@ color: white;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-/* .--tech-slide-section:hover {
-  
-} */
 
 .--tech-slide-section-header {
   text-align: center;
