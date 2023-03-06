@@ -5,12 +5,17 @@ import '../styles/views.home.css'
 import '../styles/views.home.greeting.css'
 import '../styles/views.home.hash-button.css'
 
+import UnsplashAttribution from '../components/UnsplashAttribution'
+
 const HomeSlide = () => {
   return (
     <section className="main__slide --greeting-slide" id='info-slide'>
       <flex-wrapper class="greeting-slide__wrapper">
         <Greeting/>
-        <UnsplashAttribution/>
+        <UnsplashAttribution 
+          aProfile={"https://unsplash.com/@anniespratt?utm_source=your_app_name&utm_medium=referral"}
+          name={"Annie Spratt"}
+          aUnsplash={"https://unsplash.com/?utm_source=your_app_name&utm_medium=referral"}/>
       </flex-wrapper>
     </section>
   )
@@ -53,22 +58,5 @@ const HashLinkButton = ({title, destination}:{title: string, destination: string
       smooth
       to={`#${destination}-slide`}>{title}
     </HashLink>
-  )
-}
-
-const UnsplashAttribution = () => {
-  return (
-    <div className="test-class-wr">
-      Background Image by 
-      <a className="test-class-a"
-        href="https://unsplash.com/@anniespratt?utm_source=your_app_name&utm_medium=referral">
-        Annie Spratt
-      </a> 
-      on 
-      <a className="test-class-a"
-        href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">
-        Unsplash
-      </a>
-    </div>
   )
 }

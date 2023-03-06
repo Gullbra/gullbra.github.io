@@ -7,6 +7,8 @@ import '../styles/views.projects.css'
 import '../styles/views.projects.filter-button.css'
 import '../styles/views.projects.project-card.css'
 
+import UnsplashAttribution from '../components/UnsplashAttribution'
+
 interface IProject {
   imageUrl: string
   title: string
@@ -119,54 +121,61 @@ const ProjectsSlide = () => {
 
   return(
     <section className='main__slide --projects-slide' id='projects-slide'>
-      <h2 className='projects-slide__title'> projects </h2>
+      <flex-wrapper class="projects-slide__wrapper">
+        <h2 className='projects-slide__title'> projects </h2>
 
-      <div className='projects-slide__filter-bar'>
-        {Object.keys(projectState).length && ["All", ...Object.keys(projectState.languageKvp)].map(lang => (
-          <button className={filters.shownLang.has(lang === "All" ? "All-lang" : lang) ? 'filter-btn-btn --active-filter' : 'filter-btn-btn'} 
-            value={lang === "All" ? "All-lang" : lang} filter-type="lang"
-            key={lang} onClick={filterHandler} 
-          >
-            {lang}
-            <div className='filter-btn-count'>{lang === "All" ? projectState.projects.length : projectState.languageKvp[lang]}</div>
-          </button>
-        ))}
-      </div>
+        <div className='projects-slide__filter-bar'>
+          {Object.keys(projectState).length && ["All", ...Object.keys(projectState.languageKvp)].map(lang => (
+            <button className={filters.shownLang.has(lang === "All" ? "All-lang" : lang) ? 'filter-btn-btn --active-filter' : 'filter-btn-btn'} 
+              value={lang === "All" ? "All-lang" : lang} filter-type="lang"
+              key={lang} onClick={filterHandler} 
+            >
+              {lang}
+              <div className='filter-btn-count'>{lang === "All" ? projectState.projects.length : projectState.languageKvp[lang]}</div>
+            </button>
+          ))}
+        </div>
 
-      <div className='projects-slide__filter-bar'>
-        {Object.keys(projectState).length && ["All", ...Object.keys(projectState.toolsKvp)].map(tool => (
-          <button className={filters.shownTools.has(tool === "All" ? "All-tools" : tool) ? 'filter-btn-btn --active-filter' : 'filter-btn-btn'} 
-            value={tool === "All" ? "All-tools" : tool} filter-type="tools"
-            key={tool} onClick={filterHandler}
-          >
-            {tool}
-            <div className='filter-btn-count'>{tool === "All" ? projectState.projects.length : projectState.toolsKvp[tool]}</div>
-          </button>
-        ))}
-      </div>
+        <div className='projects-slide__filter-bar'>
+          {Object.keys(projectState).length && ["All", ...Object.keys(projectState.toolsKvp)].map(tool => (
+            <button className={filters.shownTools.has(tool === "All" ? "All-tools" : tool) ? 'filter-btn-btn --active-filter' : 'filter-btn-btn'} 
+              value={tool === "All" ? "All-tools" : tool} filter-type="tools"
+              key={tool} onClick={filterHandler}
+            >
+              {tool}
+              <div className='filter-btn-count'>{tool === "All" ? projectState.projects.length : projectState.toolsKvp[tool]}</div>
+            </button>
+          ))}
+        </div>
 
-      <div className='projects-slide__card-container'> 
-        {projectState.projects
-          ?.filter(project => {
+        <div className='projects-slide__card-container'> 
+          {projectState.projects
+            ?.filter(project => {
 
-            const langSelect = filters.shownLang.has("All-lang") || (() => {
-              for (let lang of project.languages)
-                if (filters.shownLang.has(lang))
-                  return true
-            })()
+              const langSelect = filters.shownLang.has("All-lang") || (() => {
+                for (let lang of project.languages)
+                  if (filters.shownLang.has(lang))
+                    return true
+              })()
 
-            const toolsSelect = filters.shownTools.has("All-tools") || (() => {
-              for (let tool of project.toolsAndFrameworks)
-                if (filters.shownTools.has(tool))
-                  return true
-            })()
+              const toolsSelect = filters.shownTools.has("All-tools") || (() => {
+                for (let tool of project.toolsAndFrameworks)
+                  if (filters.shownTools.has(tool))
+                    return true
+              })()
 
-            return toolsSelect && langSelect
-          })
-          ?.map(project => (
-            <ProjectCard key={project.title} project={project}/>
-          ))}      
-      </div>
+              return toolsSelect && langSelect
+            })
+            ?.map(project => (
+              <ProjectCard key={project.title} project={project}/>
+            ))}      
+        </div>
+
+        <UnsplashAttribution 
+          aProfile="https://unsplash.com/fr/@austindistel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          name='Austin Distel'
+          aUnsplash='https://unsplash.com/photos/rxpThOwuVgE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'/>
+      </flex-wrapper>
     </section>
   )
 }
@@ -193,3 +202,19 @@ const ProjectCard = ({project}: {project: IProject}) => {
 }
 
 export default ProjectsSlide
+
+/* 
+<div>
+  Photo by 
+  <a href="https://unsplash.com/pt-br/@jasongoodman_youxventures?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+    Jason Goodman
+  </a> 
+  on 
+  <a href="https://unsplash.com/photos/Oalh2MojUuk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+    Unsplash
+  </a>
+</div>
+
+Photo by <a href="https://unsplash.com/fr/@austindistel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Austin Distel</a> on <a href="https://unsplash.com/photos/rxpThOwuVgE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+*/

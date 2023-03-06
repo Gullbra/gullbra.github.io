@@ -29,7 +29,7 @@ const TechSlide = () => {
           <section className='--tech-slide-section'>
             <h3 className='--tech-slide-section-header'>Back End</h3>
             <flex-wrapper class='tools-section__f-wrapper'>
-              {['NodeJS', '.NET', 'Express', 'Flask'].map(lang => (
+              {['NodeJS', '.NET', 'Express', 'Flask', 'Docker'].map(lang => (
                 <p key={lang} className='f-wrapper__lang-item'>{lang}</p>
               ))}
             </flex-wrapper>
@@ -45,7 +45,7 @@ const TechSlide = () => {
           <section className='--tech-slide-section'>
             <h3 className='--tech-slide-section-header'>Other</h3>
             <flex-wrapper class='tools-section__f-wrapper'>
-              {['Agile Work Methods', 'AWS Lightsail', 'Netlify'].map(lang => (
+              {['Agile Work Methods', 'AWS Lightsail', 'Netlify', 'Figma', 'Git'].map(lang => (
                 <p key={lang} className='f-wrapper__lang-item'>{lang}</p>
               ))}
             </flex-wrapper>

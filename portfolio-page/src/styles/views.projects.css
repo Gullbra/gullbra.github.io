@@ -1,5 +1,22 @@
 .--projects-slide {
-  background-color: var(--color-green-light);
+  /* background-color: var(--color-green-light); */
+
+  /*
+  jason-goodman-Oalh2MojUuk-unsplash.jpg
+  */
+
+  background: center / cover no-repeat url("../../public/austin-distel-rxpThOwuVgE-unsplash.jpg");
+  background-attachment: fixed;
+
+  /* display: flex;
+  flex-direction: column;
+
+  align-items: center; */
+}
+
+.projects-slide__wrapper {
+  position: relative;
+  background-color: rgba(201, 219, 210, 0.9);
 
   display: flex;
   flex-direction: column;

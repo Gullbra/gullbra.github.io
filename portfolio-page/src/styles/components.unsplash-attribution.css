@@ -1,0 +1,20 @@
+.test-class-wr {
+  position: absolute;
+  bottom: 1rem;
+
+  color: var(--color-green-darker);
+  font-size: 0.7rem;
+}
+
+.test-class-a {
+  color: inherit;
+  font-size: inherit;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.test-class-a:hover {
+  color: white;
+}
