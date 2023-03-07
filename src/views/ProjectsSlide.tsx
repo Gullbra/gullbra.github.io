@@ -165,7 +165,7 @@ const ProjectsSlide = () => {
         </div>
 
         <div className='projects-slide__card-container'> 
-          {projectsToShow.length > 0 
+          {projectsToShow?.length > 0 
             ? projectsToShow.map(project => (
                 <ProjectCard key={project.title} project={project}/>
               ))
