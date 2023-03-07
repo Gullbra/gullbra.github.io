@@ -204,19 +204,3 @@ const ProjectCard = ({project}: {project: IProject}) => {
 }
 
 export default ProjectsSlide
-
-/* 
-<div>
-  Photo by 
-  <a href="https://unsplash.com/pt-br/@jasongoodman_youxventures?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-    Jason Goodman
-  </a> 
-  on 
-  <a href="https://unsplash.com/photos/Oalh2MojUuk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-    Unsplash
-  </a>
-</div>
-
-Photo by <a href="https://unsplash.com/fr/@austindistel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Austin Distel</a> on <a href="https://unsplash.com/photos/rxpThOwuVgE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-*/

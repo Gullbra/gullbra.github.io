@@ -27,7 +27,7 @@ const Greeting = () => {
     <article className="wrapper__article">
       <flex-item class="article__f-item-image">
         <img className="f-item-image__image" 
-          src="./imageedit_1_7427655471.png" 
+          src="./martin-gullbrandsson.png" 
           alt="Headshot of Me; Martin Gullbrandsson"/>
       </flex-item>
 
