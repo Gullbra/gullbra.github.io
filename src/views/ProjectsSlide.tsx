@@ -48,7 +48,7 @@ const ProjectsSlide = () => {
           githubLink: "",
           liveLink: "",
         
-          languages: ["TS"],
+          languages: ["TypeScript"],
           toolsAndFrameworks: ["Node", "Express"]
         },
         {  
@@ -68,7 +68,7 @@ const ProjectsSlide = () => {
           githubLink: "",
           liveLink: "",
         
-          languages: ["C#", "TS"],
+          languages: ["C#", "TypeScript"],
           toolsAndFrameworks: [".NET", "ASP.NET core", "React"]
         },
       ]
@@ -189,10 +189,14 @@ const ProjectsSlide = () => {
 // }
 
 const ProjectCard = ({project}: {project: IProject}) => {
+
   return (
     <article className='card-container__project-card'>
-      <div className='project-card__image'> imageplaceholder </div>
+      <img className='project-card__image' src='./austin-distel-rxpThOwuVgE-unsplash.jpg' alt='imageplaceholder'/>
       <h3 className='project-card__title'>{project.title}</h3>
+
+      {/* <div>{[...project.languages, ...project.toolsAndFrameworks].join(' ')}</div> */}
+
       <p className='project-card__desc'>{project.desc}</p>
 
       <div className='project-card__btn-container'>

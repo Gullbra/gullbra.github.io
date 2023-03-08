@@ -24,7 +24,8 @@ background-filter {
 
   --site-margin-left: 1rem;
   --site-margin-right: 1rem;
-  --slide-margin-top-bottom: 3rem;
+  --slide-margin-top: 3rem;
+  --slide-margin-bottom: 5rem;
   --height-header: 4rem;
 
   --height-project-card: 20rem;

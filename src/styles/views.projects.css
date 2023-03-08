@@ -14,7 +14,7 @@
 }
 
 .projects-slide__title {
-  margin-top: var(--slide-margin-top-bottom);
+  margin-top: var(--slide-margin-top);
   margin-bottom: 1rem;
 }
 
@@ -24,12 +24,12 @@
   justify-content: center;
   flex-wrap: wrap;
 
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .projects-slide__card-container {
   margin-top: 3rem;
-  margin-bottom: var(--slide-margin-top-bottom);
+  margin-bottom: var(--slide-margin-bottom);
 
   min-height: var(--height-project-card);
 
