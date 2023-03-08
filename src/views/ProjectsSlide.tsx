@@ -43,7 +43,7 @@ const ProjectsSlide = () => {
       const projects: IProject[] = [
         {  
           imageUrl: "",
-          title: "this is project 1",
+          title: "This is project 1",
           desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod saepe error inventore architecto molestias eius aspernatur?",
           githubLink: "",
           liveLink: "",
@@ -53,7 +53,7 @@ const ProjectsSlide = () => {
         },
         {  
           imageUrl: "",
-          title: "this is project 2",
+          title: "This is project 2",
           desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod saepe error inventore architecto molestias eius aspernatur?",
           githubLink: "",
           liveLink: "",
@@ -63,7 +63,7 @@ const ProjectsSlide = () => {
         },
         {  
           imageUrl: "",
-          title: "this is project 3",
+          title: "This is project 3",
           desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod saepe error inventore architecto molestias eius aspernatur?",
           githubLink: "",
           liveLink: "",
@@ -192,12 +192,21 @@ const ProjectCard = ({project}: {project: IProject}) => {
 
   return (
     <article className='card-container__project-card'>
-      <img className='project-card__image' src='./austin-distel-rxpThOwuVgE-unsplash.jpg' alt='imageplaceholder'/>
+
+      <div className='project-card__image-wrapper'>
+        <img className='project-card__image' src='./austin-distel-rxpThOwuVgE-unsplash.jpg' alt='imageplaceholder'/>
+      </div>
       <h3 className='project-card__title'>{project.title}</h3>
 
-      {/* <div>{[...project.languages, ...project.toolsAndFrameworks].join(' ')}</div> */}
-
       <p className='project-card__desc'>{project.desc}</p>
+
+      <div className='project-card__tag-box'>
+        {[...project.languages, ...project.toolsAndFrameworks].map(item => (
+          <span className='tag-box__tag' key={item}>
+            {item}
+          </span>
+        ))}
+      </div>
 
       <div className='project-card__btn-container'>
         <button className='btn-container__project-buttons' title='Github Repo'> <FontAwesomeIcon icon={faGithub} className="fa-icon-overrides-projectcard"/> </button>
