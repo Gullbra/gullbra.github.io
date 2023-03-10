@@ -28,6 +28,7 @@
 
 .header__links {
   margin-left: 1rem;
+  font-family: var(--font-family-cairo);
 
   display: block;
   color: white;

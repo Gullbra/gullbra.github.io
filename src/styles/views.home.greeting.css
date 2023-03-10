@@ -1,3 +1,5 @@
+
+
 /* 
   transform-origin: bottom left;
   transition: all 1s ease-in-out; 
@@ -41,14 +43,24 @@
 .f-item-text__pre-header {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+
+  font-family: var(--font-set-large-text);
+  font-weight: var(--font-weight-large);
 }
 .f-item-text__header {
   font-size: 2rem;
   margin-bottom: 1rem;
+
+  font-family: var(--font-set-large-text);
+  font-weight: var(--font-weight-large);
 }
 .f-item-text__post-header {
   font-size: 1rem;
   margin-bottom: 1rem;
+
+  font-family: var(--font-set-small-text);
+  font-weight: var(--font-weight-small);
+  line-height: 1.2em;
 }
 
 .f-item-text__btn-container {

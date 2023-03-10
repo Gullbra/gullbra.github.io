@@ -9,7 +9,7 @@ const TechSlide = () => {
         <h2 className='f-wrapper__slide-header'>Tech</h2>
 
         <section className='--tech-slide-section'>
-          <h3 className='--tech-slide-section-header'>languages</h3>
+          <h3 className='--tech-slide-section-header'>Languages</h3>
           <flex-wrapper class='lang-section__f-wrapper'>
             {['JavaScript', 'TypeScript', 'Python', 'C#'].map(lang => (
               <p key={lang} className='f-wrapper__lang-item'>{lang}</p>

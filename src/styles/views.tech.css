@@ -32,6 +32,9 @@
   padding-top: 0.3rem;
   padding-left: 0.7rem;
   padding-right: 0.7rem;
+
+  font-family: var(--font-family-cairo);
+  line-height: 1.4rem;
 }
 
 .f-wrapper__f-item-tools {

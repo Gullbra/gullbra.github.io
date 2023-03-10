@@ -1,4 +1,19 @@
+:root {
+  --font-family-noto: 'Noto Sans Tangsa', sans-serif;
+  --font-family-nunito: 'Nunito', sans-serif;
+  --font-family-quicksand: 'Quicksand', sans-serif;
+  --font-family-cairo: 'Cairo', sans-serif;
+
+  --font-family-cormorant-g: 'Cormorant Garamond', serif;
+
+  --font-family-pacifico: 'Pacifico', cursive;
+  --font-family-tilt-neon: 'Tilt Neon', cursive;
+}
+
+
 .test-class-wr {
+  font-family: var(--font-family-pacifico);
+
   position: absolute;
   bottom: 1rem;
 
@@ -7,6 +22,8 @@
 }
 
 .test-class-a {
+  font-family: var(--font-family-tilt-neon);
+
   color: inherit;
   font-size: inherit;
   padding-left: 0.7rem;
