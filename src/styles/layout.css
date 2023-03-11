@@ -10,8 +10,35 @@
 }
 
 .site__bottom-nav-bar {
-  position: absolute;
-  bottom: 10%;
+  background: rgba(65, 74, 57, 0.5);
+  backdrop-filter: blur(15px);
+
+  border-radius: 3rem;
+
+  position: fixed;
+  bottom: 2rem;
   left: 50%;
+
+  padding: 0.7rem 1.7rem;
+
+  transform: translateX(-50%);
+
   text-align: center;
+
+  width: max-content;
+
+  display: flex;
+  gap: 0.8rem;
+}
+
+.bottom-nav-bar__link {
+  text-align: center;
+  text-justify: distribute;
+  text-decoration: none;
+
+  border-radius: 100%;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--color-green-darkest);
+  color: white;
 }
