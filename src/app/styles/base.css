@@ -9,6 +9,12 @@
   --color-brown-medium: #855B4F;
   --color-brown-light: #A59384;
 
+  /*
+    #2f261f
+    #2b2219
+    #827b72
+  */
+
   --site-margin-left: 1rem;
   --site-margin-right: 1rem;
   --slide-margin-top: 3rem;
@@ -17,7 +23,7 @@
 
   --height-project-card: 20rem;
 
-  font-size: 14px;
+  font-size: 12px;
 }
 
 :root {
@@ -52,7 +58,7 @@
   --font-set-large-text: var(--font-family-rokkitt);
   --font-weight-large: 500;
 
-  --font-set-small-text: var(--font-family-nunito);
+  --font-set-small-text: var(--font-family-tilt-neon);
   --font-weight-small: 400;
   
   --font-set-buttons: var(--font-family-cairo);
@@ -63,8 +69,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
-  font-family:'Courier New', Courier, monospace;
+  font-family: var(--font-set-small-text);
 }
 
 react-render,
@@ -74,14 +79,14 @@ background-filter {
   display: block;
 }
 
-/* react-render {
-  position: relative;
-} */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-set-large-text);
+}
 
 
 @media only screen and (min-width: 300px) {
   :root {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 @media only screen and (min-width: 400px) {
@@ -94,6 +99,8 @@ background-filter {
   :root {
     --site-margin-left: calc((100vw - (700px - 3 * 16px)) / 2);
     --site-margin-right: calc((100vw - (700px - 3 * 16px)) / 2);
+
+    font-size: 16px;
   }
 }
 @media only screen and (min-width: 900px) {
@@ -114,60 +121,3 @@ background-filter {
     --site-margin-right: calc((100vw - (1300px - 4 * 16px)) / 2);
   }
 } */
-
-
-/* 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} 
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-*/
-

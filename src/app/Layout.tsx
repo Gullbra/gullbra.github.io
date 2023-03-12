@@ -3,9 +3,9 @@ import { HashLink } from 'react-router-hash-link'
 import { useMediaQuery } from "react-responsive";
 
 
-
-import '../styles/layout.css'
-import '../styles/components.header.css'
+import './styles/layout.css'
+import './styles/layout.header.css'
+import './styles/layout.nav-bar.css'
 
 const Layout = ({children}:{children: React.ReactNode}) => {
   // TODO: Modify ./utils/useScrollPosition with this
@@ -24,26 +24,9 @@ const Layout = ({children}:{children: React.ReactNode}) => {
       <main className='site__main'
         // TODO: Modify ./utils/useScrollPosition with this
         //ref={refMain}
-        >{children}</main>
-      <nav className='site__bottom-nav-bar'>
-
-        <HashLink className='bottom-nav-bar__link'
-          smooth to="#tech-slide">T</HashLink>
-        <HashLink className='bottom-nav-bar__link'
-          smooth to="#projects-slide">P</HashLink>
-
-        {/* <HashLink smooth to="#about-slide">To about!</HashLink>
-        <HashLink smooth to="#contact-slide">To contact!</HashLink>
-        <HashLink smooth to="#info-slide">To info!</HashLink>
-        <HashLink smooth to="#journey-slide">To journey!</HashLink> */}
-
-        {/* 
-        // TODO: Modify ./utils/useScrollPosition with this
-        <button type='button' onClick={() => {
-          console.log(refMain.current?.scrollTop)
-        }}>click</button> 
-        */}
-      </nav>
+        >{children}
+      </main>
+      {/* <NavBar /> */}
     </>
   )
 }
@@ -60,7 +43,7 @@ const Header = () => {
       <h1 className="header__p-name">Martin Gullbrandsson</h1>
 
       <flex-wrapper class="header__flex-item">
-        {isTabletOrLarger && ['tech', 'projects', 'about'].map(slide => (
+        {isTabletOrLarger && ['tech', 'projects'].map(slide => (
           <HashLink className="header__links"
             smooth 
             key={`${slide}`} 
@@ -68,9 +51,37 @@ const Header = () => {
           </HashLink>
         ))}
       
-        <p className="header__links">Contact</p>
+        <HashLink className="header__links --contact-link"
+          smooth
+          to="#contact-slide"
+          >Contact
+        </HashLink>
       </flex-wrapper>
 
     </header>
   )
+}
+
+const NavBar = () => {
+ return (
+  <nav className='site__bottom-nav-bar'>
+
+    <HashLink className='bottom-nav-bar__link'
+      smooth to="#tech-slide">T</HashLink>
+    <HashLink className='bottom-nav-bar__link'
+      smooth to="#projects-slide">P</HashLink>
+
+    {/* <HashLink smooth to="#about-slide">To about!</HashLink>
+    <HashLink smooth to="#contact-slide">To contact!</HashLink>
+    <HashLink smooth to="#info-slide">To info!</HashLink>
+    <HashLink smooth to="#journey-slide">To journey!</HashLink> */}
+
+    {/* 
+    // TODO: Modify ./utils/useScrollPosition with this
+    <button type='button' onClick={() => {
+      console.log(refMain.current?.scrollTop)
+    }}>click</button> 
+    */}
+  </nav>
+ ) 
 }

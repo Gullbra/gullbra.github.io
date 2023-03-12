@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/views.tech.css'
+import '../styles/views-tech/views.tech.css'
 
 const TechSlide = () => {
   return (
@@ -52,6 +52,7 @@ const TechSlide = () => {
           </section>
         </flex-item>
       </flex-wrapper>
+      <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis cumque maiores earum mollitia dolores excepturi sed commodi quam, reprehenderit soluta natus ipsam quibusdam impedit doloremque delectus quisquam aspernatur incidunt consequuntur consequatur accusantium eaque officia culpa! Sed voluptatem doloremque modi quia nobis veritatis quasi? Dolorem reprehenderit facere eligendi iure velit dicta, quod dolorum. Voluptates tempore temporibus vero quisquam, accusamus aliquam minima amet possimus sit natus nisi perspiciatis alias ea assumenda ex dignissimos magni explicabo itaque minus veritatis eveniet dolore dolor officia? Magnam, voluptatum nobis eaque quia dolores mollitia. A optio nesciunt architecto adipisci dolor quos, reprehenderit facilis modi. Voluptates, voluptas? Aliquam aliquid ipsa incidunt officia quos libero nostrum, voluptas aspernatur eos atque architecto rerum quisquam tempora autem excepturi enim iste, id corrupti nulla! Iste omnis error distinctio labore necessitatibus a totam ea sit perspiciatis magni nobis quia, iusto ad repellat, nisi nam sint voluptas eveniet temporibus eum et corrupti illo. Temporibus voluptatibus veniam, animi dolores esse vel vero mollitia in dignissimos doloremque ab excepturi dolorem, eaque cum soluta, officia nobis voluptate labore. Delectus modi doloribus eos vitae soluta id iure? Adipisci veniam quam laborum fugit quo ullam corporis rem ab dignissimos reiciendis ea, pariatur corrupti deserunt ex architecto quos. Sapiente, laboriosam.</div>
     </section>
   )
 }

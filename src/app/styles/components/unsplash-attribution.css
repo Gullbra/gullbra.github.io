@@ -17,8 +17,12 @@
   position: absolute;
   bottom: 1rem;
 
-  color: var(--color-green-darker);
+  color: var(--color-green-light);
+  /* color: white; */
   font-size: 0.7rem;
+  /* text-shadow: black 0px 2px 3px; */
+  -webkit-text-stroke: 0.5px var(--color-green-darker);
+  filter: drop-shadow(0px 3px 2px black);
 }
 
 .test-class-a {

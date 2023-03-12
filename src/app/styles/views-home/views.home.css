@@ -1,0 +1,16 @@
+.--greeting-slide {
+  background: right / cover no-repeat url("../../../../public/annie-spratt-QckxruozjRg-unsplash.png");
+  background-attachment: fixed;
+}
+
+.greeting-slide__wrapper{
+  position: relative;
+
+  width: 100%;
+  min-height: calc(100vh - var(--height-header));
+
+  display: flex;
+
+  justify-content: center;
+  /* align-items: center; */
+}

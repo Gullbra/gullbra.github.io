@@ -1,5 +1,5 @@
 
-import '../styles/components.unsplash-attribution.css'
+import '../styles/components/unsplash-attribution.css'
 
 interface IUnsplashProps {
   aProfile: string

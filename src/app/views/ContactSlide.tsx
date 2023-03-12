@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/views.contact.css'
+import '../styles/views-contact/views.contact.css'
 
 const ContactSlide = () => {
   return(

@@ -1,12 +1,11 @@
 import React from 'react';
 
-import '../styles/base.css';
-import '../styles/components.css'
+import './styles/base.css';
 
 import Layout from './Layout'
-import HomeSlide from '../views/HomeSlide'
-import TechSlide from '../views/TechSlide'
-import ProjectsSlide from '../views/ProjectsSlide'
+import HomeSlide from './views/HomeSlide';
+import TechSlide from './views/TechSlide'
+// import ProjectsSlide from './views/ProjectsSlide'
 // import AboutSlide from '../views/AboutSlide'
 // import ContactSlide from '../views/ContactSlide'
 
@@ -15,7 +14,7 @@ function Portfolio() {
     <Layout>
       <HomeSlide/>
       <TechSlide/>
-      <ProjectsSlide/>
+      {/* <ProjectsSlide/> */}
       {/* <JourneySlide/> */}
       {/* <AboutSlide/> */}
       {/* <ContactSlide/> */}
