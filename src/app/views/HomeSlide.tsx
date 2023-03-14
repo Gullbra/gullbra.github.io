@@ -1,14 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { HashLink } from "react-router-hash-link";
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
-
 
 import '../styles/views-home/views.home.css'
 import '../styles/views-home/views.home.greeting.css'
 import '../styles/views-home/views.home.hash-button.css'
 
+import { scrollWidthOffset } from "../utils/scrollWidthOffset";
 import UnsplashAttribution from "../components/UnsplashAttribution";
 
 let firstRender = true
@@ -68,9 +67,13 @@ const GreetingCard = () => {
           | JavaScript | TypeScript | C# | Python | 
         </p>
 
-        <HashLink smooth to="#tech-slide" className="fa-hash-link --no-opacity" ref={refArrowDown}>
-          <FontAwesomeIcon icon={faChevronDown} className="fa-icon-overrides-homeslide"/> 
-        </HashLink>
+        <div className="f-item-text__continue-arrow-wrapper">
+          <HashLink to="#tech-slide" className="continue-arrow-wrapper__fa-hash-link --no-opacity" ref={refArrowDown}
+            scroll={(el) => scrollWidthOffset(el, -4*12)} 
+          >
+            <FontAwesomeIcon icon={faChevronDown} className="--fa-icon-overrides-homeslide"/> 
+          </HashLink>
+        </div>
         
         {/* <div className="f-item-text__btn-container">
           <HashLinkButton destination="tech" title="My Skills"/>

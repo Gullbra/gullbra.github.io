@@ -6,14 +6,22 @@
   color: white;
   box-shadow: inset 0 0 16px 0 var(--color-green-darkest);
 
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-wrapper {
+  width: var(--width-content);
+  height: 100%;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
   font-family: var(--font-set-large-text);
-
-  z-index: 1
 }
 .--header-sticky {
   position: sticky;
@@ -21,7 +29,7 @@
 }
 
 .header__p-name {
-  margin-left: var(--site-margin-left);
+
   
   font-family: inherit;
   font-size: 1.4rem;
@@ -29,7 +37,6 @@
 }
 
 .header__flex-item {
-  margin-right: var(--site-margin-right);
   
   display: flex;
   flex-direction: row;
@@ -54,6 +61,9 @@
 
 .--contact-link {
   margin-left: 1rem;
+  font-size: 1.4rem;
+}
+.--hamburger-link {
   font-size: 1.4rem;
 }
 

@@ -16,8 +16,8 @@
     #827b72
   */
 
-  --site-margin-left: 1rem;
-  --site-margin-right: 1rem;
+  --width-content: calc(100vw - 1rem);
+
   --slide-margin-top: 3rem;
   --slide-margin-bottom: 5rem;
   --height-header: 4rem;
@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-@media only screen and (min-width: 300px) {
+/* @media only screen and (min-width: 300px) {
   :root {
     font-size: 14px;
   }
@@ -119,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
     --site-margin-left: calc((100vw - (1100px - 4 * 16px)) / 2);
     --site-margin-right: calc((100vw - (1100px - 4 * 16px)) / 2);
   }
-}
+} */
 /* @media only screen and (min-width: 1300px) {
   :root {
     --site-margin-left: calc((100vw - (1300px - 4 * 16px)) / 2);
