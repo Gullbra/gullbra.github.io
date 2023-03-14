@@ -8,6 +8,7 @@
   --color-brown-dark: #694937;
   --color-brown-medium: #855B4F;
   --color-brown-light: #A59384;
+  --color-shadow: rgba(0,0,0,0.2);
 
   /*
     #2f261f
@@ -77,6 +78,10 @@ flex-wrapper,
 flex-item,
 background-filter {
   display: block;
+}
+
+react-render {
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {

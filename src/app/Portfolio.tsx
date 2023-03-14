@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles/base.css';
 
-import Layout from './Layout'
+import { Layout } from './Layout'
 import HomeSlide from './views/HomeSlide';
 import TechSlide from './views/TechSlide'
 // import ProjectsSlide from './views/ProjectsSlide'

@@ -1,12 +1,3 @@
-/* 
 .site__main {
-  height: 100vh;
-  width: 100vw;
-  overflow-y: scroll;
+  overflow: hidden
 }
-
-.main__slide {
-  width: 100%;
-  min-height: 100vh;
-}
-*/

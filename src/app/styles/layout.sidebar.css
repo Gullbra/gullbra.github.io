@@ -1,0 +1,35 @@
+.site__sidebar {
+  background-color: white;
+
+  position: fixed;
+  left: 0;
+
+  max-width: 0px;
+  width: 80%;
+  height: 100%;
+
+  z-index: 1;
+
+  transition: max-width 0.3s ease-in-out;
+
+  overflow: hidden;
+}
+
+.--sidebar-open {
+  max-width: 200px;
+}
+
+.sidebar__element {
+  display: block;
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  text-align: center;
+  text-decoration: none;
+  
+  color: black;
+
+  border-bottom: 1px solid black;
+  box-shadow: inset 0px -2px 2px 0px var(--color-shadow);
+}

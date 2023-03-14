@@ -15,7 +15,7 @@ let firstRender = true
 
 const HomeSlide = () => {
   return (
-    <section className="main__slide --greeting-slide" id='info-slide'>
+    <section className="main__slide --greeting-slide" id='home-slide'>
       <flex-wrapper class="greeting-slide__wrapper">
         <GreetingCard/>
         <UnsplashAttribution 
@@ -56,10 +56,10 @@ const GreetingCard = () => {
 
       <flex-item class="article__f-item-text">
         <h3 className="f-item-text__pre-header --no-opacity" ref={refPreHeader}>
-          Hello World, I'm
+          Hello World
         </h3>
         <h2 className="f-item-text__name-header --no-opacity" ref={refNameHeader}>
-          Martin Gullbrandsson
+          I'm Martin Gullbrandsson
         </h2>
         <h3 className="f-item-text__title-header --no-opacity" ref={refTitleHeader} >
           Full-Stack Developer

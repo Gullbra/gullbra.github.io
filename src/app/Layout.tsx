@@ -1,64 +1,98 @@
-// import react, { useState, useEffect, useRef} from 'react'
+import react, { useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import { useMediaQuery } from "react-responsive";
 
-
 import './styles/layout.css'
 import './styles/layout.header.css'
+import './styles/layout.sidebar.css'
 import './styles/layout.nav-bar.css'
 
-const Layout = ({children}:{children: React.ReactNode}) => {
-  // TODO: Modify ./utils/useScrollPosition with this
-  // const refMain = useRef<HTMLDivElement>(null)
+export const Layout = ({children}: {children: React.ReactNode}) => {
+  const [ showSidebar, setShowSidebar ] = useState<boolean>(false)
 
-  /*
-  Sidebar (Scroll track)
-  Scroll up button
-  Bottom navbar
-  Connection bar
- */
+  const slidesArr = ['tech', 'projects']
+  const isTabletOrLarger = useMediaQuery({minWidth : 700})
+
+  // TODO: Modify ./utils/useScrollPosition with useRef
+
+  const scrollWidthOffset = (el: HTMLElement, offset: number) => {
+    window.scrollTo({ 
+      top: el.getBoundingClientRect().top + window.pageYOffset + offset, 
+      behavior: 'smooth' 
+    }); 
+  }
 
   return (
     <>
-      <Header/>
-      <main className='site__main'
-        // TODO: Modify ./utils/useScrollPosition with this
-        //ref={refMain}
-        >{children}
-      </main>
+      <Header setShowSidebar={setShowSidebar} slidesArr={slidesArr} isTabletOrLarger={isTabletOrLarger}/>
+      <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} scrollWidthOffset={scrollWidthOffset} slidesArr={slidesArr}/>
+      <main className='site__main'>{children}</main>
       {/* <NavBar /> */}
     </>
   )
 }
 
-export default Layout
 
-
-const Header = () => {
-  const isTabletOrLarger = useMediaQuery({minWidth : 700})
-
+interface IHeaderProps {
+  setShowSidebar: react.Dispatch<react.SetStateAction<boolean>>, 
+  slidesArr: string[], 
+  isTabletOrLarger: boolean
+}
+const Header = ({setShowSidebar, slidesArr, isTabletOrLarger}: IHeaderProps) => {
   return(
-    <header className='slide__header'>
-            
+    <header className={isTabletOrLarger ? 'slide__header' : 'slide__header --header-sticky'}>
       <h1 className="header__p-name">Martin Gullbrandsson</h1>
 
       <flex-wrapper class="header__flex-item">
-        {isTabletOrLarger && ['tech', 'projects'].map(slide => (
+        {isTabletOrLarger && slidesArr.map(slide => (
           <HashLink className="header__links"
             smooth 
             key={`${slide}`} 
-            to={`#${slide}-slide`}>{slide[0].toUpperCase() + slide.substring(1)}
+            to={`#${slide}-slide`}
+          > {slide[0].toUpperCase() + slide.substring(1)}
           </HashLink>
         ))}
       
-        <HashLink className="header__links --contact-link"
-          smooth
-          to="#contact-slide"
-          >Contact
-        </HashLink>
+        {isTabletOrLarger 
+          ? (
+            <HashLink className="header__links --contact-link"
+              smooth
+              to="#contact-slide"
+              >Contact
+            </HashLink>
+          ) : (
+            <div onClick={() => setShowSidebar((prev) => {return !prev})}>
+              ☰
+            </div>
+          )
+        }
       </flex-wrapper>
-
     </header>
+  )
+}
+
+interface ISidebarProps {
+  showSidebar: Boolean
+  setShowSidebar: react.Dispatch<react.SetStateAction<boolean>>
+  scrollWidthOffset: (el: HTMLElement, offset: number) => void
+  slidesArr: string[]
+}
+const Sidebar = ({showSidebar, setShowSidebar, scrollWidthOffset, slidesArr}: ISidebarProps) => {
+  return(
+    <aside className={ showSidebar ? "site__sidebar --sidebar-open" : 'site__sidebar'}>
+      <HashLink className='sidebar__element' to={`#home-slide`} smooth 
+        onClick={() => setShowSidebar((prev) => {return !prev})} 
+        scroll={(el) => scrollWidthOffset(el, -2*4*12)}
+      > Top
+      </HashLink>
+      {slidesArr.map(slide => (
+        <HashLink className='sidebar__element' to={`#${slide}-slide`} smooth key={slide}
+          scroll = {(el) => scrollWidthOffset(el, -4*12)}
+          onClick={() => setShowSidebar((prev) => {return !prev})}
+        > {slide}
+        </HashLink>
+      ))}
+    </aside>
   )
 }
 

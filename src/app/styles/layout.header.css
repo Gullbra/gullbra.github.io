@@ -12,6 +12,12 @@
   align-items: center;
 
   font-family: var(--font-set-large-text);
+
+  z-index: 1
+}
+.--header-sticky {
+  position: sticky;
+  top: 0;
 }
 
 .header__p-name {
