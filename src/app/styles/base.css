@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@200;300;400;500&family=Cairo:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500;600&family=Cormorant+Upright:wght@300;400;500&family=Inconsolata:wght@300;400;500&family=Noto+Sans+Tangsa&family=Nunito:wght@300;400;600&family=Overpass+Mono:wght@300;400;500;600&family=Pacifico&family=Podkova:wght@400;500;600&family=Poppins:wght@300;400&family=Quicksand:wght@300;400;500;600;700&family=Red+Hat+Mono:wght@300;400;500;600&family=Roboto+Mono:wght@200;300;400;500;600&family=Rokkitt:wght@200;300;400;500&family=Tilt+Neon&display=swap');
 
+/** colors */
 :root {
   --color-green-darkest: #414A39;
   --color-green-darker: #5B6650;
@@ -9,17 +10,17 @@
   --color-brown-medium: #855B4F;
   --color-brown-light: #A59384;
   --color-shadow: rgba(0,0,0,0.2);
+  --color-brown-alt-dark: #2b2219;
+  --color-brown-alt-medium: #2f261f;
+  --color-brown-alt-light: #827b72;
+}
 
-  /*
-    #2f261f
-    #2b2219
-    #827b72
-  */
-
+/** dimensions */
+:root {
   --width-content: calc(100vw - 1rem);
 
   --slide-margin-top: 3rem;
-  --slide-margin-bottom: 5rem;
+  --slide-margin-bottom: 3rem;
   --height-header: 4rem;
 
   --height-project-card: 20rem;
@@ -27,18 +28,17 @@
   font-size: 12px;
 }
 
+/** fonts */
 :root {
+  /* unassigned */
   --font-family-red-hat-mono: 'Red Hat Mono', monospace;
   --font-family-roboto-mono: 'Roboto Mono', monospace;
-
   --font-family-cairo: 'Cairo', sans-serif;
   --font-family-noto: 'Noto Sans Tangsa', sans-serif;
   --font-family-nunito: 'Nunito', sans-serif;
   --font-family-poppins: 'Poppins', sans-serif;
   --font-family-quicksand: 'Quicksand', sans-serif;
-}
 
-:root {
   /* large */
   --font-family-courier-new: 'Courier New', Courier, monospace;
   --font-family-podkova: 'Podkova', serif;
@@ -54,13 +54,11 @@
   --font-family-cormorant-u: 'Cormorant Upright', serif;
   --font-family-pacifico: 'Pacifico', cursive;
   --font-family-tilt-neon: 'Tilt Neon', cursive;
-}
-:root {
-  --font-set-large-text: var(--font-family-rokkitt);
-  --font-weight-large: 500;
 
-  --font-set-small-text: var(--font-family-tilt-neon);
-  --font-weight-small: 400;
+  /* choosem*/
+  --font-set-large-text: var(--font-family-cormorant-g);
+  
+  --font-set-small-text: var(--font-family-nunito);
   
   --font-set-buttons: var(--font-family-cairo);
   --font-set-cursive: var(--font-family-tilt-neon);
@@ -89,11 +87,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* @media only screen and (min-width: 300px) {
+@media only screen and (min-width: 300px) {
   :root {
     font-size: 14px;
   }
 }
+/* 
 @media only screen and (min-width: 400px) {
   :root {
     --site-margin-left: calc((100vw - (400px - 2 * 16px)) / 2);

@@ -29,6 +29,8 @@ export default HomeSlide
 
 const GreetingCard = () => {
   const refPreHeader = useRef<HTMLParagraphElement>(null)
+  const refImage = useRef<HTMLImageElement>(null)
+  const refSpan = useRef<HTMLSpanElement>(null)
   const refNameHeader = useRef<HTMLParagraphElement>(null)
   const refTitleHeader = useRef<HTMLParagraphElement>(null)
   const refPostHeader = useRef<HTMLParagraphElement>(null)
@@ -36,7 +38,9 @@ const GreetingCard = () => {
 
   useEffect(() => {
     if (firstRender) {
+      refImage.current?.classList.add("--full-opacity")
       refPreHeader.current?.classList.add("--full-opacity")
+      refSpan.current?.classList.add("--full-opacity")
       refNameHeader.current?.classList.add("--full-opacity")
       refTitleHeader.current?.classList.add("--full-opacity")
       refPostHeader.current?.classList.add("--full-opacity")
@@ -48,17 +52,17 @@ const GreetingCard = () => {
   return (
     <article className="wrapper__article">
       <flex-item class="article__f-item-image">
-        <img className="f-item-image__image" 
+        <img className="f-item-image__image --no-opacity" ref={refImage}
           src="./martin-gullbrandsson.png" 
           alt="Headshot of Me; Martin Gullbrandsson"/>
       </flex-item>
 
       <flex-item class="article__f-item-text">
         <h3 className="f-item-text__pre-header --no-opacity" ref={refPreHeader}>
-          Hello World
+          Hello World! <span className="pre-header__span --no-opacity" ref={refSpan}>I am</span>
         </h3>
         <h2 className="f-item-text__name-header --no-opacity" ref={refNameHeader}>
-          I'm Martin Gullbrandsson
+          Martin Gullbrandsson
         </h2>
         <h3 className="f-item-text__title-header --no-opacity" ref={refTitleHeader} >
           Full-Stack Developer

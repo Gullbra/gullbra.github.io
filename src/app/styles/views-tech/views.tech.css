@@ -1,17 +1,22 @@
 .--tech-slide {
+  display: block;
   background-color: var(--color-green-light);
-}
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .slide-tech__f-wrapper {
   display: flex;
   flex-direction: column;
 
   align-items: center;
+  width: var(--width-content);
 }
 
 .f-wrapper__slide-header {
-  margin-top: var(--slide-margin-top);
+  margin-top: calc(var(--slide-margin-top) / 2);
 }
 
 .--tech-slide-section {
@@ -32,16 +37,13 @@
   padding-top: 0.3rem;
   padding-left: 0.7rem;
   padding-right: 0.7rem;
-
-  font-family: var(--font-family-cairo);
-  line-height: 1.4rem;
 }
 
 .f-wrapper__f-item-tools {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-
+  
   margin-top: 1rem;
   margin-bottom: var(--slide-margin-bottom);
 }
@@ -68,4 +70,4 @@
     flex-direction: column;
     align-items: center;
   }
-}
+} 

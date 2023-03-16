@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faMicrophoneLines } from '@fortawesome/free-solid-svg-icons'
 
-import './styles/views.projects.css'
-import './styles/views.projects.filter-button.css'
-import './styles/views.projects.project-card.css'
+import '../styles/views-projects/views.projects.css'
+import '../styles/views-projects/views.projects.filter-button.css'
+import '../styles/views-projects/views.projects.project-card.css'
 
 import UnsplashAttribution from '../components/UnsplashAttribution'
 
