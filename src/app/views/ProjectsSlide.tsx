@@ -9,6 +9,7 @@ import '../styles/views-projects/views.projects.project-card.css'
 
 import UnsplashAttribution from '../components/UnsplashAttribution'
 import { NavArrow } from '../components/NavArrow'
+import { Link } from 'react-router-dom'
 
 interface IProject {
   imageUrl: string
@@ -44,33 +45,26 @@ const ProjectsSlide = () => {
       const projects: IProject[] = [
         {  
           imageUrl: "",
-          title: "This is project 1",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod saepe error inventore architecto molestias eius aspernatur?",
-          githubLink: "",
-          liveLink: "",
-        
-          languages: ["TypeScript"],
-          toolsAndFrameworks: ["Node", "Express"]
-        },
-        {  
-          imageUrl: "",
-          title: "This is project 2",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod saepe error inventore architecto molestias eius aspernatur?",
-          githubLink: "",
+          title: "Node Modules Remover",
+          desc: 
+            "A python script/application for removing node modules.\n\nLearning new tools, " +
+            "languages and IDE:s takes time... and space. "+
+            "I wrote this to locate, select and remove some my 20+ 250mb+ react/next node modules folders. TKinter GUI.",
+          githubLink: "https://github.com/Gullbra/Node-Module-Remover",
           liveLink: "",
         
           languages: ["Python"],
-          toolsAndFrameworks: ["Flask", "NumPy"]
+          toolsAndFrameworks: ["tkinter"]
         },
         {  
-          imageUrl: "",
-          title: "This is project 3",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod saepe error inventore architecto molestias eius aspernatur?",
-          githubLink: "",
+          imageUrl: "https://raw.githubusercontent.com/gullbra/RegularExpressions/main/example.png",
+          title: "RegExp Tester - CLI",
+          desc: "A simple and quick command line RegExp tester. Writting this is how I learned regular expressons for JavaScript, and, by extension, TypeScript.",
+          githubLink: "https://github.com/Gullbra/RegularExpressions",
           liveLink: "",
         
-          languages: ["C#", "TypeScript"],
-          toolsAndFrameworks: [".NET", "ASP.NET core", "React"]
+          languages: ["JavaScript"],
+          toolsAndFrameworks: ["NodeJs"]
         },
       ]
 
@@ -194,13 +188,12 @@ const ProjectsSlide = () => {
 // }
 
 const ProjectCard = ({project}: {project: IProject}) => {
-
   return (
     <article className='card-container__project-card'>
       <div className='project-card__image-wrapper'>
-        <img className='project-card__image' src='./austin-distel-rxpThOwuVgE-unsplash.jpg' alt='imageplaceholder'/>
+        <img className='project-card__image' src={project.imageUrl || './austin-distel-rxpThOwuVgE-unsplash.jpg'} alt='imageplaceholder'/>
       </div>
-      
+
       <h3 className='project-card__title'>{project.title}</h3>
 
       <p className='project-card__desc'>{project.desc}</p>
@@ -214,8 +207,17 @@ const ProjectCard = ({project}: {project: IProject}) => {
       </div>
 
       <div className='project-card__btn-container'>
-        <button className='btn-container__project-buttons' title='Github Repo'> <FontAwesomeIcon icon={faGithub} className="fa-icon-overrides-projectcard"/> </button>
-        <button className='btn-container__project-buttons' title='Deployed Site'> <FontAwesomeIcon icon={faMicrophoneLines} className="fa-icon-overrides-projectcard"/> </button>
+        {project.githubLink && (
+          <Link to={project.githubLink} className='btn-container__project-buttons' title='Github Repo'> 
+            <FontAwesomeIcon icon={faGithub} className="fa-icon-overrides-projectcard"/> 
+          </Link>
+        )}
+
+        {project.liveLink && (
+          <Link to={project.liveLink} className='btn-container__project-buttons' title='Deployed Site'> 
+            <FontAwesomeIcon icon={faMicrophoneLines} className="fa-icon-overrides-projectcard"/> 
+          </Link>
+        )}
       </div>
     </article>
   )

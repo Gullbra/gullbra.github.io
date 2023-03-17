@@ -50,7 +50,8 @@
 
 .project-card__image {
   object-fit: cover;
-  opacity: 75%;
+  object-position: left;
+  opacity: 100%;
 
   width: 100%;
   height: var(--image-max-height);
@@ -135,6 +136,10 @@
 }
 
 .btn-container__project-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 2rem;
   height: 2rem;
   background-color: inherit;
