@@ -1,77 +1,76 @@
+
 :root {
-  --height-project-card: 20rem;
+  --height-project-card: 25rem;
+  --width-product-card: 20rem;
+  --image-max-height: 13rem;
+  --image-min-height: 2rem;
+
   --padding-sides-product-card: 1rem;
 
-  --image-min-height: 2rem;
-  --image-max-height: 11rem;
   --transition-card-hover: all 0.4s ease-in-out;
 }
 
 .card-container__project-card {
   background-color: var(--color-green-medium);
   box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
-
-  height: var(--height-project-card);
-  width: 16rem;
-
   border-radius: 0.5rem;
 
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 2rem;
+  height: var(--height-project-card);
+  width: var(--width-product-card);
+
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
 
   --product-card-image-height: var(--image-max-height);
   --desc-margin-top: 0;
   --desc-max-height: 0;
   --desc-color: var(--color-green-medium);
-  overflow: hidden;
-  position: relative;
 }
 .card-container__project-card:hover {
   transition: var(--transition-card-hover);
   box-shadow: 0px 16px 16px 0px rgba(0,0,0,0.2);
   --product-card-image-height: var(--image-min-height);
   --desc-margin-top: 1rem;
-  /* --desc-max-height: 1.3rem; */
+
   --desc-max-height: 8rem;
-  --desc-color: black;
-  /* --desc-color: var(--color-green-light); */
+  --desc-color: var(--color-green-light);
 }
 
 .project-card__image-wrapper {
-  border-top-right-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
-
-  overflow: hidden;
-  height: var(--product-card-image-height);
-  width: 100%;
-
   background-color: var(--color-green-light);
   transition: var(--transition-card-hover);
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  overflow: hidden;
+
+  height: var(--product-card-image-height);
+  width: 100%;
 }
 
 .project-card__image {
   object-fit: cover;
-
   opacity: 75%;
+
   width: 100%;
   height: var(--image-max-height);
 } 
 
 .project-card__title {
-  /* border: 1px solid black; */
-
-  text-align: center;
-
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   padding-left: var(--padding-sides-product-card);
   padding-right: var(--padding-sides-product-card);
+
+  color: var(--color-green-light);
+  font-size: 1.8rem;
+  text-align: center;
 }
 
-/* ! TODO */
 .project-card__desc {
-  /* border: 1px solid black; */
-  transition: margin-top 0.4s ease-in-out, max-height 0.6s ease-in-out 0.2s, color 0.4s ease-in-out 0.1s;
+  transition: 
+    margin-top 0.4s ease-in-out, 
+    max-height 0.6s ease-in-out 0.2s, 
+    color 0.4s ease-in-out 0.1s;
 
   text-align: center;
 
@@ -87,63 +86,50 @@
   font-family: var(--font-family-cairo);
   line-height: 1.4rem;
 }
-/* .project-card__desc:hover {
-  transition: max-height 0.2s ease-in-out;
-  max-height: 6rem;
-  z-index: 100;
-  background-color: inherit;
-  z-index: 1;
-} */
 
 .project-card__tag-box {
-  /* border: 1px solid black; */
   margin-top: 0.5rem;
 
   width: 100%;
   position: absolute;
   bottom: 3.5rem;
 
-  height: calc(var(--height-project-card) - var(--image-max-height) - (1rem + 1.4rem) - 3.5rem);
+  height: calc(var(--height-project-card) - var(--image-max-height) - (1rem + 1.4rem + 1rem) - 3.5rem);
 
   text-align: center;
   padding-left: var(--padding-sides-product-card);
   padding-right: var(--padding-sides-product-card);
+  padding: 0.5rem var(--padding-sides-product-card);
 
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .tag-box__tag {
-  font-family: var(--font-family-cairo);
-  line-height: 0.7rem;
-
-  display: block;
-  font-size: 0.6rem;
-  padding: 0.2rem 0.4rem;
-  margin-left: 0.05rem;
-  margin-right: 0.05rem;
-
-  height: 1.1rem;
-
   color: var(--color-green-light) ;
   background-color: var(--color-green-darkest) ;
+  font-family: var(--font-set-buttons);
+  display: block;
+  border-radius: 0.8rem;
 
-  border-radius: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
 }
 
 
 .project-card__btn-container {
-  /* border: 1px solid black; */
-
-  position: absolute;
-  bottom: 1rem;
-  width: 100%;
   padding-left: var(--padding-sides-product-card);
   padding-right: var(--padding-sides-product-card);
 
+  width: 100%;
+  
+  position: absolute;
+  bottom: 1rem;
   display: flex;
   justify-content: space-around;
 }
@@ -166,3 +152,6 @@
 .fa-icon-overrides-projectcard {
   color: inherit;
 } 
+/*
+
+*/

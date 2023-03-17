@@ -21,7 +21,7 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
       <Header setShowSidebar={setShowSidebar} slidesArr={slidesArr} isTabletOrLarger={isTabletOrLarger}/>
       <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} slidesArr={slidesArr}/>
       <main className='site__main'>{children}</main>
-      <NavBar />
+      {/* <NavBar /> */}
     </>
   )
 }
@@ -95,6 +95,8 @@ const NavBar = () => {
  return (
   <nav className='site__bottom-nav-bar'>
 
+    <HashLink className='bottom-nav-bar__link'
+      smooth to="#home-slide">H</HashLink>
     <HashLink className='bottom-nav-bar__link'
       smooth to="#tech-slide">T</HashLink>
     <HashLink className='bottom-nav-bar__link'

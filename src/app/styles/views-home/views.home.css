@@ -10,7 +10,5 @@
   min-height: calc(100vh - var(--height-header));
 
   display: flex;
-
   justify-content: center;
-  /* align-items: center; */
 }

@@ -8,6 +8,7 @@ import '../styles/views-projects/views.projects.filter-button.css'
 import '../styles/views-projects/views.projects.project-card.css'
 
 import UnsplashAttribution from '../components/UnsplashAttribution'
+import { NavArrow } from '../components/NavArrow'
 
 interface IProject {
   imageUrl: string
@@ -138,7 +139,11 @@ const ProjectsSlide = () => {
   return(
     <section className='main__slide --projects-slide' id='projects-slide'>
       <flex-wrapper class="projects-slide__wrapper">
-        <h2 className='projects-slide__title'> Projects </h2>
+        <NavArrow direction='up' target='#tech-slide' additionalClass='--nav-button-override-project-slide'/>
+
+        <h2 className='projects-slide__title --slide-top-element'> 
+          Projects 
+        </h2>
 
         <div className='projects-slide__filter-bar'>
           {Object.keys(projectState).length && ["All", ...Object.keys(projectState.languageKvp)].map(lang => (
@@ -192,10 +197,10 @@ const ProjectCard = ({project}: {project: IProject}) => {
 
   return (
     <article className='card-container__project-card'>
-
       <div className='project-card__image-wrapper'>
         <img className='project-card__image' src='./austin-distel-rxpThOwuVgE-unsplash.jpg' alt='imageplaceholder'/>
       </div>
+      
       <h3 className='project-card__title'>{project.title}</h3>
 
       <p className='project-card__desc'>{project.desc}</p>

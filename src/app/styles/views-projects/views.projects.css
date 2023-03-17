@@ -1,45 +1,76 @@
 .--projects-slide {
   background: center / cover no-repeat url("../../../../public/austin-distel-rxpThOwuVgE-unsplash.jpg");
   background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.--slide-top-element {
+  margin-top: var(--slide-margin-top);
+}
+.--nav-button-override-project-slide {
+  color: var(--color-green-light);
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.6));
 }
 
 .projects-slide__wrapper {
   position: relative;
-  background-color: rgba(201, 219, 210, 0.85);
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
+
+  width: var(--width-content);
 }
 
 .projects-slide__title {
-  margin-top: var(--slide-margin-top);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 6rem;
+
+  background-color: rgba(201, 219, 210, 0.70);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+  border-radius: 0.5rem;
 }
 
 .projects-slide__filter-bar {
+  margin-top: 1rem;
+  padding: 0.5rem 0.5rem;
+
+  background-color: rgba(201, 219, 210, 0.30);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+  border-radius: 0.5rem;
+
+  width: var(--width-content);
+
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-
-  margin-top: 1rem;
 }
 
 .projects-slide__card-container {
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: var(--slide-margin-bottom);
+  padding: 1rem 1rem;
 
+  background-color: rgba(201, 219, 210, 0.30);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+  border-radius: 0.5rem;
+
+  width: var(--width-content);
   min-height: var(--height-project-card);
+  overflow-y: scroll;
 
   display: flex;
   flex-direction: row;
-
-  justify-content: center;
-  flex-wrap: wrap;
+  /* justify-content: center; */
+  flex-wrap: nowrap;
+  gap: 2rem;
 }
-
 .--projects-404 {
   align-self: center;
   color: var(--color-green-darkest);
@@ -49,4 +80,3 @@
 
   text-shadow: var(--color-green-medium) 20px 0 20px;
 }
-

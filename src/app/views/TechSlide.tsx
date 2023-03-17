@@ -3,8 +3,6 @@ import { NavArrow } from '../components/NavArrow'
 
 import '../styles/views-tech/views.tech.css'
 
-        /* <NavArrow direction="up" target="#home-slide" additionalClass=""/> */
-
 const TechSlide = () => {
   return (
     <section className='main__slide --tech-slide' id='tech-slide'>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@200;300;400;500&family=Cairo:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500;600&family=Cormorant+Upright:wght@300;400;500&family=Inconsolata:wght@300;400;500&family=Noto+Sans+Tangsa&family=Nunito:wght@300;400;600&family=Overpass+Mono:wght@300;400;500;600&family=Pacifico&family=Podkova:wght@400;500;600&family=Poppins:wght@300;400&family=Quicksand:wght@300;400;500;600;700&family=Red+Hat+Mono:wght@300;400;500;600&family=Roboto+Mono:wght@200;300;400;500;600&family=Rokkitt:wght@200;300;400;500&family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@300;400;500;700&display=swap');
 
 /** colors */
 :root {
@@ -10,8 +11,8 @@
   --color-brown-medium: #855B4F;
   --color-brown-light: #A59384;
   --color-shadow: rgba(0,0,0,0.2);
-  --color-brown-alt-dark: #2b2219;
-  --color-brown-alt-medium: #2f261f;
+  --color-brown-alt-dark: #514130;
+  --color-brown-alt-medium: #735a48;
   --color-brown-alt-light: #827b72;
 }
 
@@ -49,18 +50,17 @@
   --font-family-iconsolata: 'Inconsolata', monospace;
   --font-family-azeret-mono: 'Azeret Mono', monospace;
   --font-family-overpass-mono: 'Overpass Mono', monospace;
+  --font-family-sono: 'Sono', sans-serif;
 
   /* Attribution */
   --font-family-cormorant-u: 'Cormorant Upright', serif;
   --font-family-pacifico: 'Pacifico', cursive;
   --font-family-tilt-neon: 'Tilt Neon', cursive;
 
-  /* choosem*/
+  /* choosen*/
   --font-set-large-text: var(--font-family-cormorant-g);
-  
-  --font-set-small-text: var(--font-family-nunito);
-  
-  --font-set-buttons: var(--font-family-cairo);
+  --font-set-small-text: var(--font-family-nunito);  
+  --font-set-buttons: var(--font-family-red-hat-mono);
   --font-set-cursive: var(--font-family-tilt-neon);
 }
 
@@ -90,6 +90,11 @@ h1, h2, h3, h4, h5, h6 {
 @media only screen and (min-width: 300px) {
   :root {
     font-size: 14px;
+  }
+}
+@media only screen and (min-width: 700px) {
+  :root {
+    font-size: 16px;
   }
 }
 /* 
