@@ -86,6 +86,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-set-large-text);
 }
 
+/* .main__slide {
+  min-height: calc(100vh - var(--height-header));
+} */
 
 @media only screen and (min-width: 300px) {
   :root {
@@ -95,38 +98,21 @@ h1, h2, h3, h4, h5, h6 {
 @media only screen and (min-width: 700px) {
   :root {
     font-size: 16px;
+    --width-content: calc(100vw - 2rem);
+  }
+  /* .main__slide {
+    min-height: 100vh;
+  } */
+}
+@media only screen and (min-width: 1000px) {
+  :root {
+    --width-content: 900px;
   }
 }
-/* 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 1200px) {
   :root {
-    --site-margin-left: calc((100vw - (400px - 2 * 16px)) / 2);
-    --site-margin-right: calc((100vw - (400px - 2 * 16px)) / 2);
+    --width-content: 1100px;
   }
 }
-@media only screen and (min-width: 700px) {
-  :root {
-    --site-margin-left: calc((100vw - (700px - 3 * 16px)) / 2);
-    --site-margin-right: calc((100vw - (700px - 3 * 16px)) / 2);
 
-    font-size: 16px;
-  }
-}
-@media only screen and (min-width: 900px) {
-  :root {
-    --site-margin-left: calc((100vw - (900px - 3 * 16px)) / 2);
-    --site-margin-right: calc((100vw - (900px - 3 * 16px)) / 2);
-  }
-}
-@media only screen and (min-width: 1100px) {
-  :root {
-    --site-margin-left: calc((100vw - (1100px - 4 * 16px)) / 2);
-    --site-margin-right: calc((100vw - (1100px - 4 * 16px)) / 2);
-  }
-} */
-/* @media only screen and (min-width: 1300px) {
-  :root {
-    --site-margin-left: calc((100vw - (1300px - 4 * 16px)) / 2);
-    --site-margin-right: calc((100vw - (1300px - 4 * 16px)) / 2);
-  }
-} */
+

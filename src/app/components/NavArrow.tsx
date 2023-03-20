@@ -6,8 +6,11 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 import '../styles/components/nav-arrow.css'
+import { useMediaQuery } from "react-responsive";
 
 export const NavArrow = ({direction, target, additionalClass}: {direction: string, target: string, additionalClass: string}) => {
+  const isLargeMobileOrLarger = useMediaQuery({minWidth: 300})
+  const isTabletOrLarger = useMediaQuery({minWidth: 700})
 
   const icon = (() => {
     switch (direction) {
@@ -20,8 +23,7 @@ export const NavArrow = ({direction, target, additionalClass}: {direction: strin
   return (
     <div className="nav-arrow__arrow-wrapper">
       <HashLink to={target} className={`arrow-wrapper__arrow-hash-link ${additionalClass}`.trim()}
-        // ref={refArrowDown}
-        scroll={(el) => scrollWidthOffset(el, -4*12)} 
+        scroll={(el) => scrollWidthOffset(el, isLargeMobileOrLarger, isTabletOrLarger)} 
       >
         <FontAwesomeIcon icon={icon} className={`arrow-hash-link__fa-icon-overrides ${(() => {
           switch (direction) {
@@ -29,7 +31,7 @@ export const NavArrow = ({direction, target, additionalClass}: {direction: strin
             case "down": return "--anim-down"
             default: return ""
           }
-        })()}`.trim()}/> 
+        })()}`.trim()}/>
       </HashLink>
     </div>
   )

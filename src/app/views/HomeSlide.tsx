@@ -9,6 +9,7 @@ import '../styles/views-home/views.home.hash-button.css'
 
 import { scrollWidthOffset } from "../utils/scrollWidthOffset";
 import UnsplashAttribution from "../components/UnsplashAttribution";
+import { useMediaQuery } from "react-responsive";
 
 let firstRender = true
 
@@ -28,6 +29,9 @@ const HomeSlide = () => {
 export default HomeSlide
 
 const GreetingCard = () => {
+  const isLargeMobileOrLarger = useMediaQuery({minWidth: 300})
+  const isTabletOrLarger = useMediaQuery({minWidth: 700})
+
   const refPreHeader = useRef<HTMLParagraphElement>(null)
   const refImage = useRef<HTMLImageElement>(null)
   const refSpan = useRef<HTMLSpanElement>(null)
@@ -38,7 +42,7 @@ const GreetingCard = () => {
 
   useEffect(() => {
     if (firstRender) {
-      refImage.current?.classList.add("--full-opacity")
+      refImage.current?.classList.add("--full-img-opacity")
       refPreHeader.current?.classList.add("--full-opacity")
       refSpan.current?.classList.add("--full-opacity")
       refNameHeader.current?.classList.add("--full-opacity")
@@ -73,7 +77,7 @@ const GreetingCard = () => {
 
         <div className="f-item-text__continue-arrow-wrapper">
           <HashLink to="#tech-slide" className="continue-arrow-wrapper__fa-hash-link --no-opacity" ref={refArrowDown}
-            scroll={(el) => scrollWidthOffset(el, -4*12)} 
+            scroll={(el) => scrollWidthOffset(el, isLargeMobileOrLarger, isTabletOrLarger)}
           >
             <FontAwesomeIcon icon={faChevronDown} className="--fa-icon-overrides-homeslide"/> 
           </HashLink>

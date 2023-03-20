@@ -44,12 +44,12 @@ const ProjectsSlide = () => {
     if (firstRender) {
       const projects: IProject[] = [
         {  
-          imageUrl: "",
+          imageUrl: "https://raw.githubusercontent.com/Gullbra/Node-Module-Remover/main/img/node-modules-remover-1.png",
           title: "Node Modules Remover",
           desc: 
             "A python script/application for removing node modules.\n\nLearning new tools, " +
             "languages and IDE:s takes time... and space. "+
-            "I wrote this to locate, select and remove some my 20+ 250mb+ react/next node modules folders. TKinter GUI.",
+            "I wrote this to locate and remove some of my 20+ 250mb+ react/next node modules folders. Spartan tKinter GUI.",
           githubLink: "https://github.com/Gullbra/Node-Module-Remover",
           liveLink: "",
         
