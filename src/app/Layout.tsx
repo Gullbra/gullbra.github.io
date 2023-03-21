@@ -1,6 +1,12 @@
 import react, { useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import { useMediaQuery } from "react-responsive";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+
 import { scrollWidthOffset } from './utils/scrollWidthOffset';
 
 import './styles/layout/layout.css'
@@ -33,29 +39,55 @@ interface IHeaderProps {
 }
 const Header = ({setShowSidebar, slidesArr, isTabletOrLarger}: IHeaderProps) => {
   return(
-    <header className={isTabletOrLarger ? 'slide__header' : 'slide__header --header-sticky'}>
-      <div className='header-wrapper'>        
-        <h1 className="header__p-name">Martin Gullbrandsson</h1>
+    <header className={
+      // isTabletOrLarger ? 'layout__header' : 
+      'layout__header --header-sticky'
+    }>
+      <flex-wrapper class='header-wrapper'>
+        <HashLink className='header__h1-name-link'
+          to={`#home-slide`}
+          scroll = {(el) => scrollWidthOffset(el, true, true)}
+        >
+          <h1 className="header__h1-name">Martin Gullbrandsson</h1>
+        </HashLink>       
 
-        <flex-wrapper class="header__flex-item">        
+        <nav className="header__nav">        
           {isTabletOrLarger 
             ? (
-              [...slidesArr, "contact"].map(slide => (
-                <HashLink className={slide === "contact" ? "header__links --contact-link" : "header__links"}
-                  smooth 
-                  key={`${slide}`} 
-                  to={`#${slide}-slide`}
-                > {slide[0].toUpperCase() + slide.substring(1)}
-                </HashLink>
-              ))
+              <>
+                {[...slidesArr].map(slide => (
+                  <HashLink className={"header-nav__slide-links"} 
+                    key={`${slide}`} 
+                    to={`#${slide}-slide`}
+                    scroll = {(el) => scrollWidthOffset(el, true, true)}
+                  > {slide[0].toUpperCase() + slide.substring(1)}
+                  </HashLink>
+                ))}
+
+                <div className="header-nav__contact-btn dropdown-container">
+                  Contact
+
+                  <div className='--contact-dropdown dropdown-menu'>
+                    <Link to="https://www.github.com/gullbra" className='--contact-link' title='Gullbra @ Github'> 
+                      <FontAwesomeIcon icon={faGithub} className="fa-icon-overrides-layout"/> 
+                    </Link>
+                    <Link to="" className='--contact-link' title='Gullbra @ LinkedIn'> 
+                      <FontAwesomeIcon icon={faLinkedin} className="fa-icon-overrides-layout"/> 
+                    </Link>
+                    <Link to="" className='--contact-link' title='Gullbra @ LinkedIn'> 
+                      <FontAwesomeIcon icon={faEnvelope} className="fa-icon-overrides-layout"/> 
+                    </Link>
+                  </div>
+                </div>
+              </>
             ) : (
-              <div className="header__links --hamburger-link" onClick={() => setShowSidebar((prev) => {return !prev})}>
+              <div className="--hamburger-btn" onClick={() => setShowSidebar((prev) => {return !prev})}>
                 ☰
               </div>
             )
           }
-        </flex-wrapper>
-      </div>
+        </nav>
+      </flex-wrapper>
     </header>
   )
 }

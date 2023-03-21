@@ -80,15 +80,16 @@ background-filter {
 
 react-render {
   position: relative;
+  background-color: var(--color-green-light);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-set-large-text);
 }
 
-/* .main__slide {
+.main__slide {
   min-height: calc(100vh - var(--height-header));
-} */
+}
 
 @media only screen and (min-width: 300px) {
   :root {
@@ -112,6 +113,16 @@ h1, h2, h3, h4, h5, h6 {
 @media only screen and (min-width: 1200px) {
   :root {
     --width-content: 1100px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  :root {
+    --width-content: 1300px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  :root {
+    --width-content: 1500px;
   }
 }
 

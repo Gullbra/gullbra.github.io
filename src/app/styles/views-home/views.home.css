@@ -11,6 +11,12 @@
 
   display: flex;
   justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.15);
+  background-color: #c9dbd21e;
+  background-color: rgba(0, 0, 0, 0.15);
+  background-color: #414a391e;
+  background-color: #51413046;
 }
 
 /* @media only screen and (min-width: 700px) {

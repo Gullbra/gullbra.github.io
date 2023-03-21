@@ -12,9 +12,11 @@ export const scrollWidthOffset = (el: HTMLElement, isLargeMobileOrLarger: boolea
 
   const offset = el.id === "home-slide"
     ? - 2 * 4 * fonstSize
-    : isTabletOrLarger 
-      ? 0
-      : - 4 * fonstSize
+    : 
+    // isTabletOrLarger 
+    //   ? 0
+    //   : 
+      - 4 * fonstSize
 
   window.scrollTo({ 
     top: el.getBoundingClientRect().top + window.pageYOffset + offset, 

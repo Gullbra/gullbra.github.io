@@ -5,6 +5,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  box-shadow: inset 0px 8px 8px 0px rgba(0,0,0,0.2);
 }
 .--slide-top-element {
   margin-top: var(--slide-margin-top);
@@ -16,6 +18,9 @@
 
 .projects-slide__wrapper {
   position: relative;
+
+  border: 1px solid black;
+  background-color: #5141307e;
 
   display: flex;
   flex-direction: column;
