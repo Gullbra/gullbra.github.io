@@ -1,101 +1,111 @@
 .--tech-slide {
-  display: block;
-  background-color: var(--color-green-light);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; flex-direction: column; align-items: center;
 }
 
-.slide-tech__f-wrapper {
-  display: flex;
-  flex-direction: column;
+.slide-tech__slide-header {
+  margin-top: var(--slide-margin-top); margin-bottom: 1rem;
 
-  align-items: center;
+  font-size: 2rem;
+}
+.slide-tech__header-2 {
+  margin-top: calc(var(--slide-margin-top) / 2); margin-bottom: calc(var(--slide-margin-top) / 4);
+
+  font-size: 1.6rem;
+}
+.slide-tech__f-wrapper {
+  display: flex; flex-direction: column; align-items: center;
+
   width: var(--width-content);
 }
-
-.f-wrapper__slide-header {
-  margin-top: calc(var(--slide-margin-top) / 2);
-}
-
-.--tech-slide-section {
-  margin-top: 1rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.--tech-slide-section-header {
-  text-align: center;
-  text-decoration: underline;
-}
-.lang-section__f-wrapper {
-  margin-top: 0.2rem;
-  display: flex;
-}
-.f-wrapper__lang-item {
-  padding-top: 0.3rem;
-  padding-left: 0.7rem;
-  padding-right: 0.7rem;
-}
-
-.f-wrapper__f-item-tools {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  
-  margin-top: 1rem;
+.f-wrapper__tools-wrapper {
   margin-bottom: var(--slide-margin-bottom);
+
+  width: 100%;
+
+  display: flex; flex-wrap: wrap; flex-direction: column;
 }
 
+/** cards */
+.f-wrapper__lang-article-card, 
+.f-wrapper__tools-article-card {
+  margin-top: 0.5rem; margin-bottom: 0.5rem;
+  padding-left: 0.5rem; padding-right: 0.5rem;
 
-.tools-section__f-wrapper {
-  flex-shrink: 0;
-  margin-top: 0.2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 100%;
+  border-radius: 0.5rem;
+  
+  box-shadow: 0 4px 4px 0px var(--color-shadow);
+}
+.f-wrapper__lang-article-card {
+  color: var(--color-green-light); background-color: var(--color-green-darkest);
+}
+.f-wrapper__tools-article-card {
+  color: black; background-color: white;
+}
+.article-skill-card__header {
+  margin-top: 0.5rem; margin-bottom: 1rem;
+
+  text-align: center;
+
+  font-family: var(--font-set-small-text); font-size: 1.3rem; font-weight: 400;
+}
+.lang-article-card__f-item-wrapper,
+.tools-article-card__f-item-wrapper {
+  margin-bottom: 1rem;
+
+  display: flex; flex-wrap: wrap; justify-content: center;
+}
+.f-item-wrapper__skill-item {
+  padding: 0.3rem 0.5rem;
 }
 
 @media only screen and (min-width: 700px) {
-  .f-wrapper__f-item-tools {
-    flex-direction: row;
-    justify-content: space-around;
-
-    width: var(--width-content);
+  .article-skill-card__header {
+    margin-top: 1rem;
   }
-  .tools-section__f-wrapper {
+  .f-wrapper__lang-article-card {
+    padding-left: 1rem; padding-right: 1rem;
+
+    width: auto;
+  }
+  .f-wrapper__tools-wrapper {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .f-wrapper__tools-article-card {
+    width: 15rem;
+  }
+  .tools-article-card__f-item-wrapper {
     flex-direction: column;
     align-items: center;
   }
-} 
-
-@media only screen and (min-width: 700px) {
-  .f-wrapper__f-item-tools > .--tech-slide-section {
-    padding: 5rem, 0.6rem;
-
-
-    border-radius: 0.4rem;
-  
-    width: 13rem;
-  
-    box-shadow: 0 4px 4px 0px var(--color-shadow);
-
-    /* border: 1px solid var(--color-green-darker); */
-
-    transition: all 0.4s ease-in-out 0.2s;
-
-    color: var(--color-green-darkest);
-    background-color: white;
-
+  .tools-article-card__f-item-wrapper > .f-item-wrapper__skill-item {
+    text-align: center;
+    min-width: max-content;
+    width: 100%;
   }
 }
 
-@media only screen and (min-width: 1000px) {
-  .f-wrapper__f-item-tools > .--tech-slide-section:hover {
-    color: var(--color-green-light);
-    background-color: var(--color-green-darkest);
+@media only screen and (min-width: 1000px) { 
+  .f-wrapper__lang-article-card:hover,
+  .f-wrapper__tools-article-card:hover {
+
+    box-shadow: 0 8px 16px 0px var(--color-shadow);
+    transition: all 0.1s ease-in-out;
+  }
+  .f-wrapper__lang-article-card:hover {
+    color: var(--color-brown-alt-extra-dark);
+    background-color: var(--color-brown-alt-extra-light);
+  }
+  .f-wrapper__tools-article-card:hover {
+    color: var(--color-brown-alt-extra-light);
+    background-color: var(--color-brown-alt-dark);
+  }
+  .tools-article-card__f-item-wrapper > .f-item-wrapper__skill-item:hover {
+    transform: scale(1.25);
+    padding-left: 0; padding-right: 0;
+    color: white;
+
+    transition: all 0.1s;
   }
 }

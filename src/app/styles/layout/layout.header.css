@@ -37,8 +37,14 @@
   transition: color 0.3s ease-in-out;
 }
 .header__nav {
-  display: flex; flex-direction: row; align-items: center; gap: 2rem;
+  display: flex; flex-direction: row; align-items: center; gap: 1rem;
 }
+@media only screen and (min-width: 1000px) {
+  .header__nav {
+    gap: 2rem;
+  }
+}
+
 
 .--hamburger-btn {
   padding-right: 0.2rem; padding-left: 0.2rem;
@@ -65,7 +71,7 @@
 .header-nav__contact-btn {
   margin-left: var(--header-font-size-big);
 
-  font-family: var(--font-set-large-text); font-size: var(--header-font-size-big); font-weight: 500;
+  font-family: var(--font-set-large-text); font-size: 1.8rem; font-weight: 500;
 }
 .header-nav__contact-btn:hover { 
   color: white;

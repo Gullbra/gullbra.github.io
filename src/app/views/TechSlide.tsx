@@ -1,71 +1,74 @@
 import React from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { NavArrow } from '../components/NavArrow'
 
 import '../styles/views-tech/views.tech.css'
 
+
 const TechSlide = () => {
+  const isTabletOrLarger = useMediaQuery({minWidth: 700})
+
+  const skillsObj: {[key:string]: {
+    title: string;
+    entries: string[];
+  }} = {
+    languages: {
+      title: "Languages",
+      entries: [ 'JavaScript/TypeScript', 'Python', 'C#' ]
+    },
+    frontEnd: {
+      title: "Front End",
+      entries: [ 'ReactJS', 'NextJS', 'CSS' ],
+    },
+    backEnd: {
+      title: "Back End",
+      entries: [ 'NodeJS', '.NET', 'Express', 'Flask', 'Docker' ]
+    },
+    database: {
+      title: "Database",
+      entries: [ 'MongoDB', 'PostgreSQL', 'SQLite' ]
+    },
+    other: {
+      title: "Other",
+      entries: [ 'Agile Work Methods', 'AWS Lightsail', 'Netlify', 'Figma', 'Git' ]
+    }
+  }
+
   return (
     <section className='main__slide --tech-slide' id='tech-slide'>
-      <NavArrow direction="up" target="#home-slide" additionalClass=""/>
+      <h2 className='slide-tech__slide-header'>Tech Skills</h2>
+
+      {isTabletOrLarger && <h3 className='slide-tech__header-2'>General</h3>}
+
       <flex-wrapper class='slide-tech__f-wrapper'>
+        <article className='f-wrapper__lang-article-card'>
+          <h3 className='article-skill-card__header'>{skillsObj.languages.title}</h3>
 
-        <h2 className='f-wrapper__slide-header'>Tech</h2>
-
-        <section className='--tech-slide-section'>
-          <h3 className='--tech-slide-section-header'>Languages</h3>
-          <flex-wrapper class='lang-section__f-wrapper'>
-            {['JavaScript', 'TypeScript', 'Python', 'C#'].map(lang => (
-              <p key={lang} className='f-wrapper__lang-item'>{lang}</p>
+          <flex-wrapper class='lang-article-card__f-item-wrapper'>
+            {skillsObj.languages.entries.map(lang => (
+              <p key={lang} className='f-item-wrapper__skill-item'>{lang}</p>
             ))}
           </flex-wrapper>
-        </section>
+        </article>
 
-        <flex-item class='f-wrapper__f-item-tools'>
-          <section className='--tech-slide-section'>
-            <h3 className='--tech-slide-section-header'>Front End</h3>
-              <flex-wrapper class='tools-section__f-wrapper'>
-                {['ReactJS', 'NextJS', 'CSS'].map(lang => (
-                  <p key={lang} className='f-wrapper__lang-item'>{lang}</p>
+        {isTabletOrLarger && <h3 className='slide-tech__header-2'>Tools & Frameworks</h3>}
+
+        <flex-wrapper class='f-wrapper__tools-wrapper'>
+          {["frontEnd", "backEnd", "database", "other"].map(section => (
+            <article className='f-wrapper__tools-article-card'>
+              <h3 className='article-skill-card__header'>{skillsObj[section].title}</h3>
+              
+              <flex-wrapper class='tools-article-card__f-item-wrapper'>
+                {skillsObj[section].entries.map(tool => (
+                  <p key={tool} className='f-item-wrapper__skill-item'>{tool}</p>
                 ))}
               </flex-wrapper>
-          </section>
+            </article>
+          ))}
 
-          <section className='--tech-slide-section'>
-            <h3 className='--tech-slide-section-header'>Back End</h3>
-            <flex-wrapper class='tools-section__f-wrapper'>
-              {['NodeJS', '.NET', 'Express', 'Flask', 'Docker'].map(lang => (
-                <p key={lang} className='f-wrapper__lang-item'>{lang}</p>
-              ))}
-            </flex-wrapper>
-          </section>
-
-          <section className='--tech-slide-section'>
-            <h3 className='--tech-slide-section-header'>Database</h3>
-            <flex-wrapper class='tools-section__f-wrapper'>
-              {['MongoDB', 'PostgreSQL', 'SQLite'].map(lang => (
-                <p key={lang} className='f-wrapper__lang-item'>{lang}</p>
-              ))}
-            </flex-wrapper>
-          </section>
-
-          <section className='--tech-slide-section'>
-            <h3 className='--tech-slide-section-header'>Other</h3>
-            <flex-wrapper class='tools-section__f-wrapper'>
-              {['Agile Work Methods', 'AWS Lightsail', 'Netlify', 'Figma', 'Git'].map(lang => (
-                <p key={lang} className='f-wrapper__lang-item'>{lang}</p>
-              ))}
-            </flex-wrapper>
-          </section>
-        </flex-item> 
+          <NavArrow direction="down" target="#projects-slide" additionalClass=""/>
+        </flex-wrapper>
       </flex-wrapper>
-      <NavArrow direction="down" target="#projects-slide" additionalClass=""/>
-      <br />
-
-
-      {/* {Array.from(Array(10).keys()).map((num) => (<>
-        <br />
-        <p key={num}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis, inventore sunt explicabo facere atque illo rem cupiditate est debitis.</p>
-      </>))} */}
     </section>
   )
 }

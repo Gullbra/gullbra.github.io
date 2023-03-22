@@ -72,7 +72,7 @@ const GreetingCard = () => {
           Full-Stack Developer
         </h3>
         <p className="f-item-text__post-header --no-opacity" ref={refPostHeader}>
-          | JavaScript | TypeScript | C# | Python | 
+         {'['} <span className="post-header__span-string">"JavaScript & TypeScript"</span>, <span className="post-header__span-string">"C#"</span>, <span className="post-header__span-string">"Python"</span> {'];'}
         </p>
 
         <div className="f-item-text__continue-arrow-wrapper">

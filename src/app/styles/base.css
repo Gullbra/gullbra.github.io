@@ -11,9 +11,11 @@
   --color-brown-medium: #855B4F;
   --color-brown-light: #A59384;
   --color-shadow: rgba(0,0,0,0.2);
+  --color-brown-alt-extra-dark: #2b2219;
   --color-brown-alt-dark: #514130;
   --color-brown-alt-medium: #735a48;
   --color-brown-alt-light: #827b72;
+  --color-brown-alt-extra-light: #c5bbad;
 }
 
 /** dimensions */
@@ -58,8 +60,10 @@
   --font-family-tilt-neon: 'Tilt Neon', cursive;
 
   /* choosen*/
+  --font-set-large-text: var(--font-family-red-hat-mono);
   --font-set-large-text: var(--font-family-cormorant-g);
   --font-set-small-text: var(--font-family-nunito);  
+  --font-set-small-text: var(--font-family-red-hat-mono);  
   --font-set-buttons: var(--font-family-red-hat-mono);
   --font-set-cursive: var(--font-family-tilt-neon);
 }
@@ -91,6 +95,13 @@ h1, h2, h3, h4, h5, h6 {
   min-height: calc(100vh - var(--height-header));
 }
 
+@media only screen and (min-height: 800px) {
+  :root {
+    --slide-margin-top: 5rem;
+    --slide-margin-bottom: 5rem;
+  }
+}
+
 @media only screen and (min-width: 300px) {
   :root {
     font-size: 14px;
@@ -101,9 +112,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 16px;
     --width-content: calc(100vw - 2rem);
   }
-  /* .main__slide {
-    min-height: 100vh;
-  } */
 }
 @media only screen and (min-width: 1000px) {
   :root {
