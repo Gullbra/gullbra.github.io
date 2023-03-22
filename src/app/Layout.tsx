@@ -69,13 +69,13 @@ const Header = ({setShowSidebar, slidesArr, isTabletOrLarger}: IHeaderProps) => 
 
                   <div className='--contact-dropdown dropdown-menu'>
                     <Link to="https://www.github.com/gullbra" className='--contact-link' title='Gullbra @ Github'> 
-                      <FontAwesomeIcon icon={faGithub} className="fa-icon-overrides-layout"/> 
+                      <FontAwesomeIcon icon={faGithub} className="fa-icon-overrides-layout-header"/> 
                     </Link>
                     <Link to="" className='--contact-link' title='Gullbra @ LinkedIn'> 
-                      <FontAwesomeIcon icon={faLinkedin} className="fa-icon-overrides-layout"/> 
+                      <FontAwesomeIcon icon={faLinkedin} className="fa-icon-overrides-layout-header"/> 
                     </Link>
                     <Link to="" className='--contact-link' title='Gullbra @ LinkedIn'> 
-                      <FontAwesomeIcon icon={faEnvelope} className="fa-icon-overrides-layout"/> 
+                      <FontAwesomeIcon icon={faEnvelope} className="fa-icon-overrides-layout-header"/> 
                     </Link>
                   </div>
                 </div>
@@ -107,9 +107,22 @@ const Sidebar = ({showSidebar, setShowSidebar, slidesArr}: ISidebarProps) => {
         <HashLink className='sidebar__element' to={`#${slide}-slide`} key={slide}
           scroll = {(el) => scrollWidthOffset(el, isLargeMobileOrLarger, isTabletOrLarger)}
           onClick={() => setShowSidebar((prev) => {return !prev})}
-        > {slide}
+        > {slide[0].toUpperCase() + slide.substring(1)}
         </HashLink>
       ))}
+
+      <flex-wrapper class="sidebar__element sidebar__contact-links-wrapper">
+        <h3 className='contact-links-wrapper__contact-links-header'>Contact:</h3>
+        <Link to="https://www.github.com/gullbra" className='--contact-link' title='Gullbra @ Github'> 
+          <FontAwesomeIcon icon={faGithub} className="fa-icon-overrides-layout-header"/> 
+        </Link>
+        <Link to="" className='--contact-link' title='Gullbra @ LinkedIn'> 
+          <FontAwesomeIcon icon={faLinkedin} className="fa-icon-overrides-layout-header"/> 
+        </Link>
+        <Link to="" className='--contact-link' title='Gullbra @ LinkedIn'> 
+          <FontAwesomeIcon icon={faEnvelope} className="fa-icon-overrides-layout-header"/> 
+        </Link>
+      </flex-wrapper>
     </aside>
   )
 }
