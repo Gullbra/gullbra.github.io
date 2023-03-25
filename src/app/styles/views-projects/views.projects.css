@@ -8,6 +8,16 @@
 
   box-shadow: inset 0px 8px 8px 0px rgba(0,0,0,0.2);
 }
+.--background-filter-filter {
+  background-color: #5141307e;
+  backdrop-filter: blur(5px);
+
+  position: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; height: 100%;
+}
 .--slide-top-element {
   margin-top: var(--slide-margin-top);
 }
@@ -18,9 +28,6 @@
 
 .projects-slide__wrapper {
   position: relative;
-
-  border: 1px solid black;
-  background-color: #5141307e;
 
   display: flex;
   flex-direction: column;

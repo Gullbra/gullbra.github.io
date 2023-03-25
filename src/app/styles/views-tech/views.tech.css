@@ -58,13 +58,20 @@
 .f-item-wrapper__skill-item {
   padding: 0.3rem 0.5rem;
 }
+/* .--wrapper-for-margin-tech-slide {
+  width: 100%;
+  margin-top: calc(var(--slide-margin-bottom) / 2);
+} */
 
 @media only screen and (min-width: 700px) {
+  .slide-tech__slide-header {
+    margin-bottom: 0;
+  }
   .article-skill-card__header {
     margin-top: 1rem;
   }
   .f-wrapper__lang-article-card {
-    padding-left: 1rem; padding-right: 1rem;
+    padding-left: 1.5rem; padding-right: 1.5rem;
 
     width: auto;
   }
@@ -75,6 +82,9 @@
   .f-wrapper__tools-article-card {
     width: 15rem;
   }
+  .lang-article-card__f-item-wrapper {
+    gap: 1rem;
+  }
   .tools-article-card__f-item-wrapper {
     flex-direction: column;
     align-items: center;
@@ -84,26 +94,20 @@
     min-width: max-content;
     width: 100%;
   }
-}
-
-@media only screen and (min-width: 1000px) { 
   .f-wrapper__lang-article-card:hover,
   .f-wrapper__tools-article-card:hover {
-
     box-shadow: 0 8px 16px 0px var(--color-shadow);
+
     transition: all 0.1s ease-in-out;
-  }
-  .f-wrapper__lang-article-card:hover {
-    color: var(--color-brown-alt-extra-dark);
-    background-color: var(--color-brown-alt-extra-light);
-  }
-  .f-wrapper__tools-article-card:hover {
-    color: var(--color-brown-alt-extra-light);
+  
+    color: var(--color-brown-alt-extra-light); 
     background-color: var(--color-brown-alt-dark);
   }
+
+  .lang-article-card__f-item-wrapper > .f-item-wrapper__skill-item:hover,
   .tools-article-card__f-item-wrapper > .f-item-wrapper__skill-item:hover {
-    transform: scale(1.25);
-    padding-left: 0; padding-right: 0;
+    transform: scale(1.1);
+
     color: white;
 
     transition: all 0.1s;

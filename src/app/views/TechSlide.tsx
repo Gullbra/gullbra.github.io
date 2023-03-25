@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMediaQuery } from 'react-responsive'
-import { NavArrow } from '../components/NavArrow'
+//import { NavArrow } from '../components/NavArrow'
 
 import '../styles/views-tech/views.tech.css'
 
@@ -55,7 +55,7 @@ const TechSlide = () => {
 
         <flex-wrapper class='f-wrapper__tools-wrapper'>
           {["frontEnd", "backEnd", "database", "other"].map(section => (
-            <article className='f-wrapper__tools-article-card'>
+            <article className='f-wrapper__tools-article-card' key={section}>
               <h3 className='article-skill-card__header'>{skillsObj[section].title}</h3>
               
               <flex-wrapper class='tools-article-card__f-item-wrapper'>
@@ -66,7 +66,9 @@ const TechSlide = () => {
             </article>
           ))}
 
-          <NavArrow direction="down" target="#projects-slide" additionalClass=""/>
+          {/* <div className='--wrapper-for-margin-tech-slide'>
+            <NavArrow direction="down" target="#projects-slide" additionalClass=""/>
+          </div> */}
         </flex-wrapper>
       </flex-wrapper>
     </section>

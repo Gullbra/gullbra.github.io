@@ -102,14 +102,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media only screen and (min-width: 300px) {
+/* @media only screen and (min-width: 300px) {
   :root {
     font-size: 14px;
   }
-}
+} */
 @media only screen and (min-width: 700px) {
   :root {
-    font-size: 16px;
+    /* font-size: 16px; */
+    font-size: 14px;
     --width-content: calc(100vw - 2rem);
   }
 }

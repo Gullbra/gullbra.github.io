@@ -46,7 +46,7 @@ const Header = ({setShowSidebar, slidesArr, isTabletOrLarger}: IHeaderProps) => 
       <flex-wrapper class='header-wrapper'>
         <HashLink className='header__h1-name-link'
           to={`#home-slide`}
-          scroll = {(el) => scrollWidthOffset(el, true, true)}
+          scroll = {scrollWidthOffset}
         >
           <h1 className="header__h1-name">Martin Gullbrandsson</h1>
         </HashLink>       
@@ -59,7 +59,7 @@ const Header = ({setShowSidebar, slidesArr, isTabletOrLarger}: IHeaderProps) => 
                   <HashLink className={"header-nav__slide-links"} 
                     key={`${slide}`} 
                     to={`#${slide}-slide`}
-                    scroll = {(el) => scrollWidthOffset(el, true, true)}
+                    scroll = {scrollWidthOffset}
                   > {slide[0].toUpperCase() + slide.substring(1)}
                   </HashLink>
                 ))}
@@ -98,14 +98,11 @@ interface ISidebarProps {
   slidesArr: string[]
 }
 const Sidebar = ({showSidebar, setShowSidebar, slidesArr}: ISidebarProps) => {
-  const isLargeMobileOrLarger = useMediaQuery({minWidth: 300})
-  const isTabletOrLarger = useMediaQuery({minWidth: 700})
-
   return(
     <aside className={ showSidebar ? "site__sidebar --sidebar-open" : 'site__sidebar'}>
       {["home", ...slidesArr].map(slide => (
         <HashLink className='sidebar__element' to={`#${slide}-slide`} key={slide}
-          scroll = {(el) => scrollWidthOffset(el, isLargeMobileOrLarger, isTabletOrLarger)}
+          scroll = {scrollWidthOffset}
           onClick={() => setShowSidebar((prev) => {return !prev})}
         > {slide[0].toUpperCase() + slide.substring(1)}
         </HashLink>
@@ -129,14 +126,11 @@ const Sidebar = ({showSidebar, setShowSidebar, slidesArr}: ISidebarProps) => {
 
 // ! TODO: Modify and use with ./utils/useScrollPosition
 const NavBar = ({slidesArr}: {slidesArr: string[]}) => {
-  const isLargeMobileOrLarger = useMediaQuery({minWidth: 300})
-  const isTabletOrLarger = useMediaQuery({minWidth: 700})
-
   return (
     <nav className='site__bottom-nav-bar'>
       {["home", ...slidesArr].map(slide => (
         <HashLink className='bottom-nav-bar__link' to={`#${slide}-slide`} key={slide}
-          scroll = {(el) => scrollWidthOffset(el, isLargeMobileOrLarger, isTabletOrLarger)}
+          scroll = {scrollWidthOffset}
         > {slide[0].toUpperCase()}
         </HashLink>
       ))}

@@ -10,7 +10,7 @@
 
   4.  I dont understand why there are two rows where you filter the projects ? :joy:
 
-  5.  I honestly think the arrows up and down are kinda unnecessary, its way faster to scroll and like its COOL but the sections are so small that I dont think it adds anything
+  5.  ✔ I honestly think the arrows up and down are kinda unnecessary, its way faster to scroll and like its COOL but the sections are so small that I dont think it adds anything
 
   6.  ✔ I would put some more top and bottom margin in the little white boxes in the tech section
 

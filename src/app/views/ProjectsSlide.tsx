@@ -132,60 +132,56 @@ const ProjectsSlide = () => {
 
   return(
     <section className='main__slide --projects-slide' id='projects-slide'>
-      <flex-wrapper class="projects-slide__wrapper">
-        <NavArrow direction='up' target='#tech-slide' additionalClass='--nav-button-override-project-slide'/>
+      <background-filter class="--background-filter-filter">
+        <flex-wrapper class="projects-slide__wrapper">
+          {/* <NavArrow direction='up' target='#tech-slide' additionalClass='--nav-button-override-project-slide'/> */}
 
-        <h2 className='projects-slide__title --slide-top-element'> 
-          Projects 
-        </h2>
+          <h2 className='projects-slide__title --slide-top-element'> 
+            Projects 
+          </h2>
 
-        <div className='projects-slide__filter-bar'>
-          {Object.keys(projectState).length && ["All", ...Object.keys(projectState.languageKvp)].map(lang => (
-            <button className={filters.shownLang.has(lang === "All" ? "All-lang" : lang) ? 'filter-btn-btn --active-filter' : 'filter-btn-btn'} 
-              value={lang === "All" ? "All-lang" : lang} filter-type="lang"
-              key={lang} onClick={filterHandler} 
-            >
-              {lang}
-              <div className='filter-btn-count'>{lang === "All" ? projectState.projects.length : projectState.languageKvp[lang]}</div>
-            </button>
-          ))}
-        </div>
+          <div className='projects-slide__filter-bar'>
+            {Object.keys(projectState).length && ["All", ...Object.keys(projectState.languageKvp)].map(lang => (
+              <button className={filters.shownLang.has(lang === "All" ? "All-lang" : lang) ? 'filter-btn-btn --active-filter' : 'filter-btn-btn'} 
+                value={lang === "All" ? "All-lang" : lang} filter-type="lang"
+                key={lang} onClick={filterHandler} 
+              >
+                {lang}
+                <div className='filter-btn-count'>{lang === "All" ? projectState.projects.length : projectState.languageKvp[lang]}</div>
+              </button>
+            ))}
+          </div>
 
-        <div className='projects-slide__filter-bar'>
-          {Object.keys(projectState).length && ["All", ...Object.keys(projectState.toolsKvp)].map(tool => (
-            <button className={filters.shownTools.has(tool === "All" ? "All-tools" : tool) ? 'filter-btn-btn --active-filter' : 'filter-btn-btn'} 
-              value={tool === "All" ? "All-tools" : tool} filter-type="tools"
-              key={tool} onClick={filterHandler}
-            >
-              {tool}
-              <div className='filter-btn-count'>{tool === "All" ? projectState.projects.length : projectState.toolsKvp[tool]}</div>
-            </button>
-          ))}
-        </div>
+          <div className='projects-slide__filter-bar'>
+            {Object.keys(projectState).length && ["All", ...Object.keys(projectState.toolsKvp)].map(tool => (
+              <button className={filters.shownTools.has(tool === "All" ? "All-tools" : tool) ? 'filter-btn-btn --active-filter' : 'filter-btn-btn'} 
+                value={tool === "All" ? "All-tools" : tool} filter-type="tools"
+                key={tool} onClick={filterHandler}
+              >
+                {tool}
+                <div className='filter-btn-count'>{tool === "All" ? projectState.projects.length : projectState.toolsKvp[tool]}</div>
+              </button>
+            ))}
+          </div>
 
-        <div className='projects-slide__card-container'> 
-          {projectsToShow?.length > 0 
-            ? projectsToShow.map(project => (
-                <ProjectCard key={project.title} project={project}/>
-              ))
-            : <div className='--projects-404'>No projects matching filters</div>
-          }      
-        </div>
+          <div className='projects-slide__card-container'> 
+            {projectsToShow?.length > 0 
+              ? projectsToShow.map(project => (
+                  <ProjectCard key={project.title} project={project}/>
+                ))
+              : <div className='--projects-404'>No projects matching filters</div>
+            }      
+          </div>
 
-        <UnsplashAttribution 
-          aProfile="https://unsplash.com/fr/@austindistel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-          name='Austin Distel'
-          aUnsplash='https://unsplash.com/photos/rxpThOwuVgE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'/>
-      </flex-wrapper>
+          <UnsplashAttribution 
+            aProfile="https://unsplash.com/fr/@austindistel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            name='Austin Distel'
+            aUnsplash='https://unsplash.com/photos/rxpThOwuVgE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'/>
+        </flex-wrapper>
+      </background-filter>
     </section>
   )
 }
-
-// const FilterButton = () => {
-//   return (
-//     <></>
-//   )
-// }
 
 const ProjectCard = ({project}: {project: IProject}) => {
   return (
