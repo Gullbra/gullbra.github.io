@@ -5,6 +5,9 @@
   width: var(--width-content);
 
   display: flex; justify-content: space-evenly; flex-wrap: wrap; gap: 0.5rem;
+
+  /* position: absolute;
+  bottom: 4rem; */
 }
 
 .hash-button {

@@ -10,12 +10,17 @@ export const AboutSlide = () => {
 
   const infoContent = {
     general: `
-I'm a passionate, curious and logical <b>full-stack JavaScript developer</b>, with an academical background in physics, maths and economics.
-I have a strong drive to create value with my work; creating, improving or maintaining things that makes the lives of people better, companies more efficient and makes a positive impact on society.
-I know how important good, intuitive UX/UI design is, and I enjoy figuring out how to make applications and webpages easy and intuitive to use, without sacrificing functionality.
-I also love writing readable, stable and maintainable code in the backend. I'm full-stack for a reason.
+I'm a passionate, curious and logical <b>full-stack developer</b>, with an academical background in physics, maths and economics.
+I have a strong drive to <b>create value with my work</b>; creating, improving or maintaining things that makes the lives of people <b>better</b>, companies <b>more efficient</b> and makes a <b>positive impact</b> on society.
+I know how important <b>good, intuitive UX/UI design</b> is, and I enjoy figuring out how to make applications and webpages easy and intuitive to use, without sacrificing functionality.
+I also love writing <b>readable, stable and maintainable code</b> in the backend. I'm full-stack for a reason.
     `,
-    interests: '',
+    interests: `
+Lorem ipsum dolor sit amet consectetur <b>adipisicing</b> elit. Sint, autem.
+Lorem ipsum dolor sit amet <b>consectetur adipisicing</b> elit. Sint, autem.
+Lorem ipsum dolor sit <b>amet consectetur adipisicing</b> elit. Sint, autem.
+Lorem ipsum dolor sit amet consectetur <b>adipisicing</b> elit. Sint, autem.
+    `,
   }
 
   return(
@@ -36,29 +41,30 @@ I also love writing readable, stable and maintainable code in the backend. I'm f
         </div>
 
         {displayedInfo === 'about' && (
-          <GeneralInfo contentStringified={infoContent.general}/>
+          <InfoParser contentStringified={infoContent.general}/>
         )}
 
         {displayedInfo === 'interests' && (
-          <div className='about-article__paragraph-wrapper'>
-            {Array.from(Array(4).keys()).map((num) => (
-              <p key={num}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis, inventore sunt explicabo facere atque illo rem cupiditate est debitis.</p>
-            ))}
-          </div>
+          <InfoParser contentStringified={infoContent.interests}/>
+          // <div className='about-article__paragraph-wrapper'>
+          //   {Array.from(Array(4).keys()).map((num) => (
+          //     <p key={num}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis, inventore sunt explicabo facere atque illo rem cupiditate est debitis.</p>
+          //   ))}
+          // </div>
         )}
 
       </article>
 
       <div className='slide-section__nav-button-container'>
-        <HashLinkButton destination="tech" title="Some Things I've Learned"/>
-        <HashLinkButton destination="projects" title="Some Things I've Done"/>
+        <HashLinkButton destination="tech" title="Things I've Learned"/>
+        <HashLinkButton destination="projects" title="Things I've Done"/>
       </div>
     </section>
   )
 }
 
 
-const GeneralInfo = ({contentStringified}: {contentStringified: string}) => {
+const InfoParser = ({contentStringified}: {contentStringified: string}) => {
   return (
     <div className='about-article__paragraph-wrapper'>
       {contentStringified.trim().split(/\n/).map((paragraph, index) => (
