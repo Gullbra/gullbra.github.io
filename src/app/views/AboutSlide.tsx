@@ -10,7 +10,7 @@ export const AboutSlide = () => {
 
   const infoContent = {
     general: `
-I'm a passionate, curious and logical full-stack JavaScript developer, with an academical background in physics, maths and economics.
+I'm a passionate, curious and logical <b>full-stack JavaScript developer</b>, with an academical background in physics, maths and economics.
 I have a strong drive to create value with my work; creating, improving or maintaining things that makes the lives of people better, companies more efficient and makes a positive impact on society.
 I know how important good, intuitive UX/UI design is, and I enjoy figuring out how to make applications and webpages easy and intuitive to use, without sacrificing functionality.
 I also love writing readable, stable and maintainable code in the backend. I'm full-stack for a reason.
@@ -40,9 +40,11 @@ I also love writing readable, stable and maintainable code in the backend. I'm f
         )}
 
         {displayedInfo === 'interests' && (
-          Array.from(Array(4).keys()).map((num) => (
-            <p key={num}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis, inventore sunt explicabo facere atque illo rem cupiditate est debitis.</p>
-          ))
+          <div className='about-article__paragraph-wrapper'>
+            {Array.from(Array(4).keys()).map((num) => (
+              <p key={num}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis, inventore sunt explicabo facere atque illo rem cupiditate est debitis.</p>
+            ))}
+          </div>
         )}
 
       </article>
@@ -58,9 +60,32 @@ I also love writing readable, stable and maintainable code in the backend. I'm f
 
 const GeneralInfo = ({contentStringified}: {contentStringified: string}) => {
   return (
-    <>
-      {contentStringified.trim().split('\n').map((paragraph, index) => (<p key={index + paragraph.substring(0,2)} className='about-article__info-paragraph'>{paragraph}</p>))}
-    </>
+    <div className='about-article__paragraph-wrapper'>
+      {contentStringified.trim().split(/\n/).map((paragraph, index) => (
+        <p key={index + paragraph.substring(0,2)} className='about-article__info-paragraph'>
+          {paragraph.includes("<b>")
+            ? (() => {
+                const sequencedPar = paragraph.split(/<b>/)
+
+                return (
+                  <>
+                    {sequencedPar.map(seq => {
+                      if (seq.includes("</b>")) {
+                        return (<>
+                          <span className='info-paragraph__span'>{seq.split("</b>")[0]}</span>
+                          {seq.split("</b>")[1]}
+                        </>)
+                      }
+                      return <span>{seq}</span>
+                    })}
+                  </>
+                )
+              }) ()
+            : paragraph
+          }
+        </p>
+      ))}
+    </div>
   )
 }
 
