@@ -2,14 +2,19 @@ import React, { useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 
 import '../styles/views-about/views.about.css'
-import '../styles/views-home/views.home.hash-button.css'
+import '../styles/views-about/views.about.hash-button.css'
 import { scrollWidthOffset } from '../utils/scrollWidthOffset'
 
-const AboutSlide = () => {
+export const AboutSlide = () => {
   const [ displayedInfo, setDisplayedInfo ] = useState<string>("about")
 
   const infoContent = {
-    general: '',
+    general: `
+I'm a passionate, curious and logical full-stack JavaScript developer, with an academical background in physics, maths and economics.
+I have a strong drive to create value with my work; creating, improving or maintaining things that makes the lives of people better, companies more efficient and makes a positive impact on society.
+I know how important good, intuitive UX/UI design is, and I enjoy figuring out how to make applications and webpages easy and intuitive to use, without sacrificing functionality.
+I also love writing readable, stable and maintainable code in the backend. I'm full-stack for a reason.
+    `,
     interests: '',
   }
 
@@ -30,36 +35,42 @@ const AboutSlide = () => {
           </button>            
         </div>
 
+        {displayedInfo === 'about' && (
+          <GeneralInfo contentStringified={infoContent.general}/>
+        )}
 
-        {Array.from(Array(4).keys()).map((num) => (
-          <>
+        {displayedInfo === 'interests' && (
+          Array.from(Array(4).keys()).map((num) => (
             <p key={num}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis, inventore sunt explicabo facere atque illo rem cupiditate est debitis.</p>
-            <br />
-          </>
-        ))}
+          ))
+        )}
+
       </article>
 
       <div className='slide-section__nav-button-container'>
-        <HashLinkButton destination="tech" title="My Skills"/>
-        <HashLinkButton destination="projects" title="My Projects"/>
-        <HashLinkButton destination="about" title="More About Me"/>
-        {/* <div className="f-item-text__btn-container">
-        </div> */}  
+        <HashLinkButton destination="tech" title="Some Things I've Learned"/>
+        <HashLinkButton destination="projects" title="Some Things I've Done"/>
       </div>
-
-
     </section>
   )
 }
 
-export default AboutSlide
+
+const GeneralInfo = ({contentStringified}: {contentStringified: string}) => {
+  return (
+    <>
+      {contentStringified.trim().split('\n').map((paragraph, index) => (<p key={index + paragraph.substring(0,2)} className='about-article__info-paragraph'>{paragraph}</p>))}
+    </>
+  )
+}
+
 
 const HashLinkButton = ({title, destination}: {title: string, destination: string}) => {
   return(
     <HashLink className="hash-button"
       to={`#${destination}-slide`}
       scroll={scrollWidthOffset}
-      >{title[0].toLocaleUpperCase() + title.substring(1).toLocaleLowerCase()}
+      >{title}
     </HashLink>
   )
 }

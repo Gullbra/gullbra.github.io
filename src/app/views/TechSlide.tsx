@@ -36,7 +36,7 @@ const TechSlide = () => {
 
   return (
     <section className='main__slide --tech-slide' id='tech-slide'>
-      <h2 className='slide-tech__slide-header'>Tech Skills</h2>
+      <h2 className='slide-tech__slide-header'>Technical Skills</h2>
 
       {isTabletOrLarger && <h3 className='slide-tech__header-2'>General</h3>}
 

@@ -4,7 +4,7 @@ import './styles/base.css';
 
 import { Layout } from './Layout'
 import HomeSlide from './views/HomeSlide';
-import AboutSlide from './views/AboutSlide'
+import { AboutSlide } from './views/AboutSlide'
 import TechSlide from './views/TechSlide'
 import ProjectsSlide from './views/ProjectsSlide'
 // import ContactSlide from './views/ContactSlide'
