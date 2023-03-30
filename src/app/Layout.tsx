@@ -17,7 +17,7 @@ import './styles/layout/layout.nav-bar.css'
 export const Layout = ({children}: {children: React.ReactNode}) => {
   const [ showSidebar, setShowSidebar ] = useState<boolean>(false)
 
-  const slidesArr = ['tech', 'projects']
+  const slidesArr = ['about', 'tech', 'projects']
   const isTabletOrLarger = useMediaQuery({minWidth : 700})
 
   return (
@@ -74,9 +74,10 @@ const Header = ({setShowSidebar, slidesArr, isTabletOrLarger}: IHeaderProps) => 
                     <Link to="" className='--contact-link' title='Gullbra @ LinkedIn'> 
                       <FontAwesomeIcon icon={faLinkedin} className="fa-icon-overrides-layout-header"/> 
                     </Link>
+                    {/* // TODO: Mail
                     <Link to="" className='--contact-link' title='Gullbra @ LinkedIn'> 
                       <FontAwesomeIcon icon={faEnvelope} className="fa-icon-overrides-layout-header"/> 
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </>

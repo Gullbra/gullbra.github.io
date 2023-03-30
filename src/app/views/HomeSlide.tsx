@@ -5,7 +5,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 import '../styles/views-home/views.home.css'
 import '../styles/views-home/views.home.greeting.css'
-import '../styles/views-home/views.home.hash-button.css'
+//import '../styles/views-home/views.home.hash-button.css'
 
 import { scrollWidthOffset } from "../utils/scrollWidthOffset";
 import UnsplashAttribution from "../components/UnsplashAttribution";
@@ -72,7 +72,7 @@ const GreetingCard = () => {
         </p>
 
         <div className="f-item-text__continue-arrow-wrapper">
-          <HashLink to="#tech-slide" className="continue-arrow-wrapper__fa-hash-link --no-opacity" ref={refArrowDown}
+          <HashLink to="#about-slide" className="continue-arrow-wrapper__fa-hash-link --no-opacity" ref={refArrowDown}
             scroll={scrollWidthOffset}
           >
             <FontAwesomeIcon icon={faChevronDown} className="--fa-icon-overrides-homeslide"/> 
