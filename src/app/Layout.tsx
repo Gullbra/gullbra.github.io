@@ -8,6 +8,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 import { scrollWidthOffset } from './utils/scrollWidthOffset';
+// import { useScrollPosition } from './utils/useScrollPosition';
 
 import './styles/layout/layout.css'
 import './styles/layout/layout.header.css'
@@ -19,6 +20,17 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
 
   const slidesArr = ['about', 'tech', 'projects']
   const isTabletOrLarger = useMediaQuery({minWidth : 700})
+
+  // useScrollPosition(
+  //   ({ prevPos, currPos }) => {
+  //     console.log(currPos.x)
+  //     console.log(currPos.y)
+  //   },
+  //   [],
+  //   undefined,
+  //   undefined,
+  //   500
+  // )
 
   return (
     <>
@@ -40,8 +52,7 @@ interface IHeaderProps {
 const Header = ({setShowSidebar, slidesArr, isTabletOrLarger}: IHeaderProps) => {
   return(
     <header className={
-      // isTabletOrLarger ? 'layout__header' : 
-      'layout__header --header-sticky'
+      isTabletOrLarger ? 'layout__header --header-bg-transparent' : 'layout__header --header-bg-green'
     }>
       <flex-wrapper class='header-wrapper'>
         <HashLink className='header__h1-name-link'

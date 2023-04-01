@@ -1,6 +1,6 @@
 .wrapper__article {
   padding: 1.5rem 1.5rem;
-  margin-top: 2rem;
+  margin-top: calc(2rem + var(--height-header));
   margin-bottom: 3rem;
 
   display: flex;
@@ -159,7 +159,7 @@
 }
 @media only screen and (min-height: 700px) {
   .wrapper__article {    
-    margin-top: 5rem;
+    margin-top: calc(5rem + var(--height-header));
   }
 }
 

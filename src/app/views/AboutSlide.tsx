@@ -40,18 +40,15 @@ Lorem ipsum dolor sit amet consectetur <b>adipisicing</b> elit. Sint, autem.
           </button>            
         </div>
 
-        {displayedInfo === 'about' && (
-          <InfoParser contentStringified={infoContent.general}/>
-        )}
+        <div className='test-wrapper-for-info'>
+          {displayedInfo === 'about' && (
+            <InfoParser contentStringified={infoContent.general}/>
+          )}
 
-        {displayedInfo === 'interests' && (
-          <InfoParser contentStringified={infoContent.interests}/>
-          // <div className='about-article__paragraph-wrapper'>
-          //   {Array.from(Array(4).keys()).map((num) => (
-          //     <p key={num}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis, inventore sunt explicabo facere atque illo rem cupiditate est debitis.</p>
-          //   ))}
-          // </div>
-        )}
+          {displayedInfo === 'interests' && (
+            <InfoParser contentStringified={infoContent.interests}/>
+          )}
+        </div>
 
       </article>
 

@@ -22,11 +22,12 @@
 :root {
   --width-content: calc(100vw - 1rem);
 
-  --slide-margin-top: 3rem;
-  --slide-margin-bottom: 3rem;
-  --height-header: 4rem;
+  --slide-margin-top: 4rem;
+  --slide-margin-bottom: 4rem;
 
+  --height-header: 4rem;
   --height-project-card: 20rem;
+  --height-about-info-box: 20rem;
 
   font-size: 12px;
 }

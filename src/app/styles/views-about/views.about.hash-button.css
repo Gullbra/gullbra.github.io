@@ -1,20 +1,10 @@
 
-.slide-section__nav-button-container {
-  margin-bottom: var(--slide-margin-bottom);
-
-  width: var(--width-content);
-
-  display: flex; justify-content: space-evenly; flex-wrap: wrap; gap: 0.5rem;
-
-  /* position: absolute;
-  bottom: 4rem; */
-}
-
 .hash-button {
   margin-top: 0.5rem; margin-bottom: 0.3rem;
   padding: 0.75rem 1.125rem;
 
   background-color: var(--color-green-darker);
+  background-color: var(--color-brown-alt-dark);
   color: white;
   box-shadow: 0px 2px 2px 0 var(--color-shadow);
   
