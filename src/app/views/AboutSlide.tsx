@@ -7,6 +7,7 @@ import { scrollWidthOffset } from '../utils/scrollWidthOffset'
 
 export const AboutSlide = () => {
   const [ displayedInfo, setDisplayedInfo ] = useState<string>("about")
+  // const [  ]
 
   const infoContent = {
     general: `
@@ -25,31 +26,27 @@ Lorem ipsum dolor sit amet consectetur <b>adipisicing</b> elit. Sint, autem.
 
   return(
     <section className='main__slide --about-slide' id='about-slide'>
+      <h2 className='slide-section__slide-header'>Who am I?</h2>    
 
-      <h2 className='slide-tech__slide-header'>Who am I?</h2>    
+      <div className='about-slide__button-container'>
+        <button className={`button-container__info-type-button ${displayedInfo === 'about' ? '--displayed-info-button': ''}`.trim()}
+          onClick={() => setDisplayedInfo('about')}
+        > About
+        </button>
+        <button className={`button-container__info-type-button ${displayedInfo === 'interests' ? '--displayed-info-button': ''}`.trim()}
+          onClick={() => setDisplayedInfo('interests')}
+        > Interests
+        </button>            
+      </div>
 
       <article className='slide-section__about-article'>
-        <div className='about-article__button-container'>
-          <button className={`button-container__info-type-button ${displayedInfo === 'about' ? '--displayed-info-button': ''}`.trim()}
-            onClick={() => setDisplayedInfo('about')}
-          > About
-          </button>
-          <button className={`button-container__info-type-button ${displayedInfo === 'interests' ? '--displayed-info-button': ''}`.trim()}
-            onClick={() => setDisplayedInfo('interests')}
-          > Interests
-          </button>            
-        </div>
+        {displayedInfo === 'about' && (
+          <InfoParser contentStringified={infoContent.general}/>
+        )}
 
-        <div className='test-wrapper-for-info'>
-          {displayedInfo === 'about' && (
-            <InfoParser contentStringified={infoContent.general}/>
-          )}
-
-          {displayedInfo === 'interests' && (
-            <InfoParser contentStringified={infoContent.interests}/>
-          )}
-        </div>
-
+        {displayedInfo === 'interests' && (
+          <InfoParser contentStringified={infoContent.interests}/>
+        )}
       </article>
 
       <div className='slide-section__nav-button-container'>
@@ -64,6 +61,9 @@ Lorem ipsum dolor sit amet consectetur <b>adipisicing</b> elit. Sint, autem.
 const InfoParser = ({contentStringified}: {contentStringified: string}) => {
   return (
     <div className='about-article__paragraph-wrapper'>
+      {/* <p className='about-article__info-paragraph'>{"MartinShell"}</p>
+      <p className='about-article__info-paragraph'>{"Copyright (C) MartinSoft Corporation. All rights reserved."}</p> */}
+      <p className='about-article__info-paragraph'>{"> About"}</p>
       {contentStringified.trim().split(/\n/).map((paragraph, index) => (
         <p key={index + paragraph.substring(0,2)} className='about-article__info-paragraph'>
           {paragraph.includes("<b>")
@@ -88,6 +88,7 @@ const InfoParser = ({contentStringified}: {contentStringified: string}) => {
           }
         </p>
       ))}
+      <p className='about-article__info-paragraph --end-p'>{"> "}<span className='--end-caret'>{"_"}</span></p>
     </div>
   )
 }
