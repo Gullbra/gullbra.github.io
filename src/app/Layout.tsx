@@ -1,4 +1,4 @@
-import react, { useState } from 'react'
+import react, { useContext, useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import { useMediaQuery } from "react-responsive";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,17 +8,18 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 import { scrollWidthOffset } from './utils/scrollWidthOffset';
+import { ContentContext } from './utils/contentContext';
 // import { useScrollPosition } from './utils/useScrollPosition';
 
 import './styles/layout/layout.css'
 import './styles/layout/layout.header.css'
 import './styles/layout/layout.sidebar.css'
-import './styles/layout/layout.nav-bar.css'
+//import './styles/layout/layout.nav-bar.css'
+
 
 export const Layout = ({children}: {children: React.ReactNode}) => {
   const [ showSidebar, setShowSidebar ] = useState<boolean>(false)
 
-  const slidesArr = ['about', 'tech', 'projects']
   const isTabletOrLarger = useMediaQuery({minWidth : 700})
 
   // useScrollPosition(
@@ -34,11 +35,10 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
 
   return (
     <>
-      <Header setShowSidebar={setShowSidebar} slidesArr={slidesArr} isTabletOrLarger={isTabletOrLarger}/>
-      {isTabletOrLarger 
-        ? <NavBar slidesArr={slidesArr}/> 
-        : <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} slidesArr={slidesArr}/>
-      }
+      <Header setShowSidebar={setShowSidebar}/>
+      {isTabletOrLarger && (
+        <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+      )}
       <main className='site__main'>{children}</main>
     </>
   )
@@ -46,10 +46,11 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
 
 interface IHeaderProps {
   setShowSidebar: react.Dispatch<react.SetStateAction<boolean>>, 
-  slidesArr: string[], 
-  isTabletOrLarger: boolean
 }
-const Header = ({setShowSidebar, slidesArr, isTabletOrLarger}: IHeaderProps) => {
+const Header = ({setShowSidebar}: IHeaderProps) => {
+  const slidesArr = useContext(ContentContext).slidesArr
+  const isTabletOrLarger = useMediaQuery({minWidth : 700})
+
   return(
     <header className={
       isTabletOrLarger ? 'layout__header --header-bg-transparent' : 'layout__header --header-bg-green'
@@ -107,9 +108,10 @@ const Header = ({setShowSidebar, slidesArr, isTabletOrLarger}: IHeaderProps) => 
 interface ISidebarProps {
   showSidebar: Boolean
   setShowSidebar: react.Dispatch<react.SetStateAction<boolean>>
-  slidesArr: string[]
 }
-const Sidebar = ({showSidebar, setShowSidebar, slidesArr}: ISidebarProps) => {
+const Sidebar = ({showSidebar, setShowSidebar}: ISidebarProps) => {
+  const slidesArr = useContext(ContentContext).slidesArr
+
   return(
     <aside className={ showSidebar ? "site__sidebar --sidebar-open" : 'site__sidebar'}>
       {["home", ...slidesArr].map(slide => (
@@ -137,15 +139,16 @@ const Sidebar = ({showSidebar, setShowSidebar, slidesArr}: ISidebarProps) => {
 }
 
 // ! TODO: Modify and use with ./utils/useScrollPosition
-const NavBar = ({slidesArr}: {slidesArr: string[]}) => {
-  return (
-    <nav className='site__bottom-nav-bar'>
-      {["home", ...slidesArr].map(slide => (
-        <HashLink className='bottom-nav-bar__link' to={`#${slide}-slide`} key={slide}
-          scroll = {scrollWidthOffset}
-        > {slide[0].toUpperCase()}
-        </HashLink>
-      ))}
-    </nav>
-  ) 
-}
+// const NavBar = () => {
+//  const slidesArr = useContext(ContentContext).slidesArr
+//   return (
+//     <nav className='site__bottom-nav-bar'>
+//       {["home", ...slidesArr].map(slide => (
+//         <HashLink className='bottom-nav-bar__link' to={`#${slide}-slide`} key={slide}
+//           scroll = {scrollWidthOffset}
+//         > {slide[0].toUpperCase()}
+//         </HashLink>
+//       ))}
+//     </nav>
+//   ) 
+// }

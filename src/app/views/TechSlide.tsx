@@ -1,38 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useMediaQuery } from 'react-responsive'
-//import { NavArrow } from '../components/NavArrow'
+import { NavArrow } from '../components/NavArrow'
 
 import '../styles/views-tech/views.tech.css'
+import { ContentContext } from '../utils/contentContext'
 
 
 const TechSlide = () => {
   const isTabletOrLarger = useMediaQuery({minWidth: 700})
-
-  const skillsObj: {[key:string]: {
-    title: string;
-    entries: string[];
-  }} = {
-    languages: {
-      title: "Languages",
-      entries: [ 'JavaScript/TypeScript', 'Python', 'C#' ]
-    },
-    frontEnd: {
-      title: "Front End",
-      entries: [ 'ReactJS', 'NextJS', 'CSS' ],
-    },
-    backEnd: {
-      title: "Back End",
-      entries: [ 'NodeJS', '.NET', 'Express', 'Flask', 'Docker' ]
-    },
-    database: {
-      title: "Database",
-      entries: [ 'MongoDB', 'PostgreSQL', 'SQLite' ]
-    },
-    other: {
-      title: "Other",
-      entries: [ 'Agile Work Methods', 'AWS Lightsail', 'Netlify', 'Figma', 'Git' ]
-    }
-  }
+  const skillsObj = useContext(ContentContext).skillsObj
 
   return (
     <section className='main__slide --tech-slide' id='tech-slide'>
@@ -66,9 +42,9 @@ const TechSlide = () => {
             </article>
           ))}
 
-          {/* <div className='--wrapper-for-margin-tech-slide'>
+          <div className='--wrapper-for-margin-tech-slide --slide-margin-bottom'>
             <NavArrow direction="down" target="#projects-slide" additionalClass=""/>
-          </div> */}
+          </div>
         </flex-wrapper>
       </flex-wrapper>
     </section>

@@ -103,6 +103,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.--slide-top-element {
+  margin-top: var(--slide-margin-top);
+}
+.--slide-bottom-element {
+  margin-top: var(--slide-margin-bottom);
+}
+
 @media only screen and (min-width: 300px) {
   :root {
     font-size: 13px;

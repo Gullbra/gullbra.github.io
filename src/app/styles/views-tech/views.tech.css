@@ -88,6 +88,7 @@
   .tools-article-card__f-item-wrapper {
     flex-direction: column;
     align-items: center;
+    gap: 0;
   }
   .tools-article-card__f-item-wrapper > .f-item-wrapper__skill-item {
     text-align: center;
@@ -112,4 +113,9 @@
 
     transition: all 0.1s;
   }
+}
+
+.--wrapper-for-margin-tech-slide {
+  margin-top: 2rem;
+  width: 100%;
 }

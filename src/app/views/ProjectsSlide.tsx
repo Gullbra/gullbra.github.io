@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faMicrophoneLines } from '@fortawesome/free-solid-svg-icons'
@@ -8,19 +8,10 @@ import '../styles/views-projects/views.projects.filter-button.css'
 import '../styles/views-projects/views.projects.project-card.css'
 
 import UnsplashAttribution from '../components/UnsplashAttribution'
-import { NavArrow } from '../components/NavArrow'
+// import { NavArrow } from '../components/NavArrow'
 import { Link } from 'react-router-dom'
+import { ContentContext, IProject } from '../utils/contentContext'
 
-interface IProject {
-  imageUrl: string
-  title: string
-  desc: string
-  githubLink: string
-  liveLink: string
-
-  languages: string[]
-  toolsAndFrameworks: string[]
-}
 interface IStateProject {
   projects: IProject[]
   languageKvp: {[key: string]: number}
@@ -39,34 +30,10 @@ const ProjectsSlide = () => {
     shownLang: new Set(["All-lang"]), 
     shownTools: new Set(["All-tools"])
   })
+  const projects = useContext(ContentContext).projects
 
   useEffect(() => {
     if (firstRender) {
-      const projects: IProject[] = [
-        {  
-          imageUrl: "https://raw.githubusercontent.com/Gullbra/Node-Module-Remover/main/img/node-modules-remover-1.png",
-          title: "Node Modules Remover",
-          desc: 
-            "A python script/application for removing node modules.\n\nLearning new tools, " +
-            "languages and IDE:s takes time... and space. "+
-            "I wrote this to locate and remove some of my 20+ 250mb+ react/next node modules folders. Spartan tKinter GUI.",
-          githubLink: "https://github.com/Gullbra/Node-Module-Remover",
-          liveLink: "",
-        
-          languages: ["Python"],
-          toolsAndFrameworks: ["tkinter"]
-        },
-        {  
-          imageUrl: "https://raw.githubusercontent.com/gullbra/RegularExpressions/main/example.png",
-          title: "RegExp Tester - CLI",
-          desc: "A simple and quick command line RegExp tester. Writting this is how I learned regular expressons for JavaScript, and, by extension, TypeScript.",
-          githubLink: "https://github.com/Gullbra/RegularExpressions",
-          liveLink: "",
-        
-          languages: ["JavaScript"],
-          toolsAndFrameworks: ["NodeJs"]
-        },
-      ]
 
       const languageKvp: {[key: string]: number} = {}
       const toolsKvp: {[key: string]: number} = {}
@@ -132,14 +99,13 @@ const ProjectsSlide = () => {
 
   return(
     <section className='main__slide --projects-slide' id='projects-slide'>
-      <background-filter class="--background-filter-filter">
+      <background-filter class="--background-filter-project-slide">
         <flex-wrapper class="projects-slide__wrapper">
-          {/* <NavArrow direction='up' target='#tech-slide' additionalClass='--nav-button-override-project-slide'/> */}
-
           <h2 className='projects-slide__title --slide-top-element'> 
             Projects 
           </h2>
 
+          {/* 
           <div className='projects-slide__filter-bar'>
             {Object.keys(projectState).length && ["All", ...Object.keys(projectState.languageKvp)].map(lang => (
               <button className={filters.shownLang.has(lang === "All" ? "All-lang" : lang) ? 'filter-btn-btn --active-filter' : 'filter-btn-btn'} 
@@ -163,8 +129,9 @@ const ProjectsSlide = () => {
               </button>
             ))}
           </div>
+          */}
 
-          <div className='projects-slide__card-container'> 
+          <div className='projects-slide__card-container --slide-bottom-element'> 
             {projectsToShow?.length > 0 
               ? projectsToShow.map(project => (
                   <ProjectCard key={project.title} project={project}/>
@@ -192,7 +159,11 @@ const ProjectCard = ({project}: {project: IProject}) => {
 
       <h3 className='project-card__title'>{project.title}</h3>
 
-      <p className='project-card__desc'>{project.desc}</p>
+      <div className='project-card__desc_container'>
+        {project.desc.trim().split("\n").map((paragraph, index) => (
+          <p key={index + paragraph.substring(0,2)} className='project-card__desc_p'>{paragraph.trim()}</p>
+        ))}
+      </div>
 
       <div className='project-card__tag-box'>
         {[...project.languages, ...project.toolsAndFrameworks].map(item => (

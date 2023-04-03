@@ -7,27 +7,18 @@ import HomeSlide from './views/HomeSlide';
 import { AboutSlide } from './views/AboutSlide'
 import TechSlide from './views/TechSlide'
 import ProjectsSlide from './views/ProjectsSlide'
-// import ContactSlide from './views/ContactSlide'
+import { ContentContext, contentContext } from './utils/contentContext';
 
 function Portfolio() {
-
-  // const content = { 
-  //   slidesArr: ['about', 'tech', 'projects'],
-  // }
-
-  // const ContentContext = createContext({})
-
   return (
-    // <ContentContext.Provider value={content}>
+    <ContentContext.Provider value={contentContext}>
       <Layout>
         <HomeSlide/>
         <AboutSlide/>
         <TechSlide/>
         <ProjectsSlide/>
-        {/* <JourneySlide/> */}
-        {/* <ContactSlide/> */}
       </Layout>
-    // </ContentContext.Provider>
+    </ContentContext.Provider>
   );
 }
 
