@@ -3,6 +3,7 @@
 
 /** colors */
 :root {
+  --color-green-transparent-light: rgba(201, 219, 210, 0.70);
   --color-green-darkest: #414A39;
   --color-green-darker: #5B6650;
   --color-green-medium: #707E62;
@@ -123,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media only screen and (min-width: 1000px) {
   :root {
-    font-size: 16px;
+    /* font-size: 16px; */
     --width-content: 900px;
   }
 }
@@ -142,3 +143,30 @@ h1, h2, h3, h4, h5, h6 {
     --width-content: 1500px;
   }
 }
+
+.typewriter::after {
+  content: "_";
+  text-decoration: underline; text-decoration-thickness: 2px;
+  animation: terminal-caret-info-box 1s ease-in-out 0s infinite;
+}
+@keyframes terminal-caret-info-box {
+  49% { color: var(--color-terminal-caret);  }
+  50% { color: var(--color-terminal-box);  }
+  99% { color: var(--color-terminal-box);  }
+  100% { color: var(--color-terminal-caret);  }
+}
+
+/* @-webkit-keyframes blink{
+0%{opacity: 0;}
+100%{opacity: 1;}
+}
+
+@-moz-keyframes blink{
+0%{opacity: 0;}
+100%{opacity: 1;}
+}
+
+@keyframes blink{
+0%{opacity: 0;}
+100%{opacity: 1;}
+} */

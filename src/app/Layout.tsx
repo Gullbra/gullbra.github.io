@@ -53,7 +53,8 @@ const Header = ({setShowSidebar}: IHeaderProps) => {
 
   return(
     <header className={
-      isTabletOrLarger ? 'layout__header --header-bg-transparent' : 'layout__header --header-bg-green'
+      // isTabletOrLarger ? 'layout__header --header-bg-transparent' : 'layout__header --header-bg-green'
+      'layout__header --header-bg-green'
     }>
       <flex-wrapper class='header-wrapper'>
         <HashLink className='header__h1-name-link'

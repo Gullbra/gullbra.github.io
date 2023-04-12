@@ -4,9 +4,16 @@
   --color-bg-about-slide: var(--color-green-light);
 
   --color-terminal-box: #414a39a4;
-  --color-terminal-text: white;
+  --color-terminal-box: #414a3969;
+  --color-terminal-text: var(--color-brown-alt-extra-dark);
+  --color-terminal-text: black;
+  --color-terminal-span: var(--color-green-medium);
+  --color-terminal-span: var(--color-brown-alt-dark);
+  --color-terminal-span: var(--color-brown-dark);
+  --color-terminal-span: black;
   --color-terminal-span: var(--color-brown-alt-extra-dark);
   --color-terminal-caret: var(--color-brown-alt-extra-light);
+  --color-terminal-caret: var(--color-terminal-text);
 
   --color-about-buttons-bg-normal: var(--color-green-darkest);
   --color-about-buttons-bg-pressed: var(--color-green-medium);
@@ -44,23 +51,18 @@
 .button-container__info-type-button {
   padding: 0.5rem 1.5rem;
 
-  border: none; border-radius: 2rem;
+  border: none; border-radius: 0.2rem;
   
-  /* font-weight: 600;  */
   cursor: pointer;
   font-size: 1rem;
 
-  background-color: var(--color-about-buttons-bg-normal); color: var(--color-about-buttons-text-normal);
+  background-color: var(--color-about-buttons-bg-pressed); color: var(--color-about-buttons-text-pressed); 
   box-shadow: 0px 2px 2px 0px var(--color-shadow);
-
+  
   transition: all 0.3s ease-in-out;
 }
-/* .button-container__info-type-button:hover {
-  background-color: var(--color-brown-alt-medium);
-  color: var(--color-brown-alt-extra-light);
-} */
 .--displayed-info-button {
-  background-color: var(--color-about-buttons-bg-pressed); color: var(--color-about-buttons-text-pressed); 
+  background-color: var(--color-about-buttons-bg-normal); color: var(--color-about-buttons-text-normal);
 
   box-shadow: 0px 1px 1px 0px var(--color-shadow);
 
@@ -80,7 +82,7 @@
   background-color: var(--color-terminal-box); box-shadow: 0px 4px 4px 0px var(--color-shadow);
   
   width: var(--width-content); height: var(--height-about-info-box);
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
 }
 .about-article__paragraph-wrapper {
   max-height: 2rem;
@@ -89,7 +91,6 @@
 }
 .--cleared-terminal {
   max-height: 0rem;
-  /* background-color: purple; */
 }
 .--full-terminal {
   transition: max-height 0.5s ease-in-out 0.1s;
@@ -111,7 +112,7 @@
 .--end-caret{
   text-decoration: underline; text-decoration-thickness: 2px;
 
-  animation: terminal-caret-info-box 2s ease-in-out 0s infinite;
+  animation: terminal-caret-info-box 1s ease-in-out 0s infinite;
 }
 @keyframes terminal-caret-info-box {
   45% { color: var(--color-terminal-caret);  }
@@ -138,18 +139,15 @@
   }
 }
 
-.hash-button {
+/* .hash-button {
   margin-top: 0.5rem; margin-bottom: 0.3rem;
   padding: 0.5rem 1.5rem;
 
-  /* background-color: var(--color-brown-alt-extra-dark);
-  color: var(--color-brown-alt-extra-light); */
   background-color: var(--color-about-buttons-bg-normal); color: var(--color-about-buttons-text-normal);
   box-shadow: 0px 3px 3px 0 var(--color-shadow);
   
   border-radius: 2rem;
 
-  /* font-weight: 500; */
   font-size: 1rem;
   text-decoration: none;
   cursor: pointer;
@@ -160,7 +158,7 @@
   .hash-button:hover {
     background-color: var(--color-about-buttons-bg-hover); color: var(--color-about-buttons-text-hover);
   }
-}
+} */
 /* 
 .hash-button:active {
   background-color: var(--color-green-darkest);

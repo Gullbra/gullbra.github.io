@@ -11,7 +11,7 @@
   height: 80%;
   border-radius: 0.5rem;
 
-  background-color: rgba(201, 219, 210, 0.55);
+  background-color: var(--color-green-transparent-light);
   backdrop-filter: blur(10px);
   box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
 }
@@ -90,7 +90,7 @@
 }
 .post-header__span-string {
   color: var(--color-brown-alt-dark);
-  font-weight: 700;
+  font-weight: 600;
 }
 .--no-opacity {
   opacity: 0;
@@ -135,5 +135,6 @@
 @media only screen and (min-height: 700px) {
   .wrapper__article {    
     margin-top: calc(5rem + var(--height-header));
+    padding-top: 3rem; padding-bottom: 3rem;
   }
 }
