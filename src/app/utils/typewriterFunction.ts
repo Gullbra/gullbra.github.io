@@ -1,9 +1,6 @@
-export const setupTypewriter = (outerElement: HTMLElement, inputTypeSpeed: number, callback: any, variab:any ) => {
+export const setupTypewriter = (outerElement: HTMLElement, inputTypeSpeed: number, callback: Function) => {
   const HTML = outerElement.textContent || "";
   const typeSpeed =  inputTypeSpeed || 100
-
-  // console.log(HTML)
-  // console.log(outerElement.textContent)
   
   outerElement.innerHTML = "";
   let 
@@ -32,18 +29,8 @@ export const setupTypewriter = (outerElement: HTMLElement, inputTypeSpeed: numbe
       }
     }
 
-    // if (HTML[cursorPosition] === ">") {
-    //   //innerElement.textContent += ">";
-    //   console.log("hey")
-    // }
-    if (!inspectingInnerTag && innerTagOpen) {
-      if (HTML[cursorPosition] === ">") {
-        //innerElement.textContent += ">";
-        console.log("hey")
-      } else {
-        innerElement.innerHTML += HTML[cursorPosition];
-      }
-    }
+    if (!inspectingInnerTag && innerTagOpen) 
+      innerElement.innerHTML += HTML[cursorPosition];
 
     if (!inspectingInnerTag && !innerTagOpen) {
       tempTypeSpeed = HTML[cursorPosition] === " "
@@ -58,10 +45,10 @@ export const setupTypewriter = (outerElement: HTMLElement, inputTypeSpeed: numbe
       inspectingInnerTag = false;
 
       if (innerTagOpen) {
-        const newSpan = document.createElement("span");
-        outerElement.appendChild(newSpan);
-        newSpan.innerHTML = innerElTagAndAttributes;
-        innerElement = newSpan.firstChild as HTMLElement;
+        const wrapper = document.createElement("span");
+        outerElement.appendChild(wrapper);
+        wrapper.innerHTML = innerElTagAndAttributes;
+        innerElement = wrapper.firstChild as HTMLElement;
       }
     }
 
@@ -69,7 +56,7 @@ export const setupTypewriter = (outerElement: HTMLElement, inputTypeSpeed: numbe
     if (cursorPosition < HTML.length)
       setTimeout(type, tempTypeSpeed);
     if (cursorPosition === HTML.length)
-      setTimeout(() => callback(variab), tempTypeSpeed);
+      setTimeout(callback, tempTypeSpeed);
   };
 
   return { type };

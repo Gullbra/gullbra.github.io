@@ -15,10 +15,12 @@ export const AboutSlide = () => {
   const refTypeTest = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
-    //setClearedTerminal(false)
     if(refTypeTest.current) {
-      const TW = setupTypewriter(refTypeTest.current, 100, setClearedTerminal, false)
-      TW.type()
+      setupTypewriter(
+        refTypeTest.current, 
+        60, 
+        () => setClearedTerminal(false)
+      ).type()
     }
   }, [displayedInfo])
 
@@ -39,6 +41,7 @@ export const AboutSlide = () => {
 
       <article className='slide-section__about-article'>
         <div className={`about-article__paragraph-wrapper${clearedTeminal ? '' : ' --full-terminal'}`} ref={terminalContentRef}>
+
           <p className={`about-article__info-paragraph${clearedTeminal ?" typewriter":""}`} ref={refTypeTest}>{`> ${displayedInfo[0].toUpperCase() + displayedInfo.substring(1)}`}</p>
 
           {!clearedTeminal && displayedInfo === 'about' && (
@@ -50,14 +53,8 @@ export const AboutSlide = () => {
           )}
         </div>
       </article>
-
-      {/* <div className='slide-section__nav-button-container'>
-        <HashLinkButton destination="tech" title="Things I've Learned"/>
-        <HashLinkButton destination="projects" title="Things I've Done"/>
-      </div> */}
       
       <div className='naw wrapper'><NavArrow direction='down' target='#tech-slide' additionalClass=''></NavArrow></div>
-
     </section>
   )
 }
@@ -96,30 +93,3 @@ const InfoParser = ({contentStringified}: {contentStringified: string}) => {
     </>
   )
 }
-
-
-// const HashLinkButton = ({title, destination}: {title: string, destination: string}) => {
-//   return(
-//     <HashLink className="hash-button"
-//       to={`#${destination}-slide`}
-//       scroll={scrollWidthOffset}
-//       >{title}
-//     </HashLink>
-//   )
-// }
-
-
-
-/*
-      <text className='test-article'>
-{`{
-  `}<span>{'"SQL"'}</span>{`: [
-    `}<span>{'"PostgreSQL"'}</span>{`,
-    `}<span>{'"SQLite"'}</span>{`
-  ],
-  `}<span>{'"NoSQL"'}</span>{`: [
-    `}<span>{'"MongoDB"'}</span>{`
-  ]
-}`}
-      </text>
- */

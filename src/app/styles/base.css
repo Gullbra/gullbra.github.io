@@ -148,25 +148,11 @@ h1, h2, h3, h4, h5, h6 {
   content: "_";
   text-decoration: underline; text-decoration-thickness: 2px;
   animation: terminal-caret-info-box 1s ease-in-out 0s infinite;
+  color: var(--color-terminal-caret);
 }
 @keyframes terminal-caret-info-box {
-  49% { color: var(--color-terminal-caret);  }
-  50% { color: var(--color-terminal-box);  }
-  99% { color: var(--color-terminal-box);  }
-  100% { color: var(--color-terminal-caret);  }
+  49% { opacity: 1; }
+  50% { opacity: 0; }
+  99% { opacity: 0; }
+  100% { opacity: 1; }
 }
-
-/* @-webkit-keyframes blink{
-0%{opacity: 0;}
-100%{opacity: 1;}
-}
-
-@-moz-keyframes blink{
-0%{opacity: 0;}
-100%{opacity: 1;}
-}
-
-@keyframes blink{
-0%{opacity: 0;}
-100%{opacity: 1;}
-} */

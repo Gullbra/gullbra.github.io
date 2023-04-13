@@ -53,7 +53,8 @@ const GreetingCard = () => {
       <flex-item class="article__f-item-image">
         <img className="f-item-image__image --no-opacity" ref={refImage}
           src="./martin-gullbrandsson.png" 
-          alt="Headshot of Me; Martin Gullbrandsson"/>
+          alt="Headshot of Me; Martin Gullbrandsson"
+          title="Yes, this handsome fella is me!"/>
       </flex-item>
 
       <flex-item class="article__f-item-text">

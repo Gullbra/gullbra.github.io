@@ -1,16 +1,20 @@
 :root {
-  --height-about-info-box: 41rem;
+  --height-about-info-box: 50rem;
 
   --color-bg-about-slide: var(--color-green-light);
 
   --color-terminal-box: #414a39a4;
+  --color-terminal-box: #414a3944;
   --color-terminal-box: #414a3969;
   --color-terminal-text: var(--color-brown-alt-extra-dark);
+  --color-terminal-text: white;
   --color-terminal-text: black;
   --color-terminal-span: var(--color-green-medium);
-  --color-terminal-span: var(--color-brown-alt-dark);
   --color-terminal-span: var(--color-brown-dark);
   --color-terminal-span: black;
+  --color-terminal-span: var(--color-brown-alt-dark);
+  --color-terminal-span: var(--color-brown-alt-extra-light);
+  --color-terminal-span: var(--color-brown-alt-light);
   --color-terminal-span: var(--color-brown-alt-extra-dark);
   --color-terminal-caret: var(--color-brown-alt-extra-light);
   --color-terminal-caret: var(--color-terminal-text);
@@ -23,9 +27,19 @@
   --color-about-buttons-text-pressed: var(--color-green-light);
   --color-about-buttons-text-hover: var(--color-green-light);
 }
+@media only screen and (min-width: 350px) {
+  :root {
+    --height-about-info-box: 45rem;
+  }
+}
+@media only screen and (min-width: 400px) {
+  :root {
+    --height-about-info-box: 40rem;
+  }
+}
 @media only screen and (min-width: 700px) {
   :root {
-    --height-about-info-box: 30rem;
+    --height-about-info-box: 35rem;
   }
 }
 
@@ -61,17 +75,19 @@
   
   transition: all 0.3s ease-in-out;
 }
-.--displayed-info-button {
-  background-color: var(--color-about-buttons-bg-normal); color: var(--color-about-buttons-text-normal);
-
-  box-shadow: 0px 1px 1px 0px var(--color-shadow);
-
-  transform: scale(0.95);
-}
 @media only screen and (min-width: 700px) {
   .button-container__info-type-button:hover {
     background-color: var(--color-about-buttons-bg-hover); color: var(--color-about-buttons-text-hover);
   }
+}
+.--displayed-info-button,  .--displayed-info-button:hover{
+  background-color: var(--color-about-buttons-bg-normal); color: var(--color-about-buttons-text-normal);
+
+  box-shadow: 0px 1px 1px 0px var(--color-shadow);
+
+  cursor: auto;
+
+  transform: scale(0.95);
 }
 
 /** Info box(Terminal) */
@@ -93,11 +109,12 @@
   max-height: 0rem;
 }
 .--full-terminal {
-  transition: max-height 0.5s ease-in-out 0.1s;
-  max-height: 40rem;
+  transition: max-height 0.3s ease-in-out 0.1s;
+  max-height: var(--height-about-info-box);
 }
 .about-article__info-paragraph {
   margin-bottom: 1.5rem;
+  text-shadow: 0px 1px 0.5px var(--color-shadow);
 
   color: var(--color-terminal-text);
 }
@@ -110,7 +127,7 @@
   margin-bottom: 0;
 }
 .--end-caret{
-  text-decoration: underline; text-decoration-thickness: 2px;
+  text-decoration: underline; text-decoration-thickness: 2px; text-shadow: none;
 
   animation: terminal-caret-info-box 1s ease-in-out 0s infinite;
 }
@@ -120,6 +137,14 @@
   95% { color: var(--color-terminal-box);  }
   100% { color: var(--color-terminal-caret);  }
 }
+/*
+@keyframes terminal-caret-info-box {
+  49% { opacity: 1;  }
+  50% { opacity: 0;  }
+  99% { opacity: 0;  }
+  100% { opacity: 1;  }
+}
+*/
 
 /** Nav Buttons */
 .slide-section__nav-button-container {
@@ -138,32 +163,3 @@
     width: 600px;
   }
 }
-
-/* .hash-button {
-  margin-top: 0.5rem; margin-bottom: 0.3rem;
-  padding: 0.5rem 1.5rem;
-
-  background-color: var(--color-about-buttons-bg-normal); color: var(--color-about-buttons-text-normal);
-  box-shadow: 0px 3px 3px 0 var(--color-shadow);
-  
-  border-radius: 2rem;
-
-  font-size: 1rem;
-  text-decoration: none;
-  cursor: pointer;
-
-  transition: all 0.2s ease-in-out;
-}
-@media only screen and (min-width: 700px) {
-  .hash-button:hover {
-    background-color: var(--color-about-buttons-bg-hover); color: var(--color-about-buttons-text-hover);
-  }
-} */
-/* 
-.hash-button:active {
-  background-color: var(--color-green-darkest);
-}
-.hash-button:focus {
-  outline: 1px solid var(--color-green-darkest);
-}  
-*/
