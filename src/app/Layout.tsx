@@ -14,6 +14,7 @@ import { ContentContext } from './utils/contentContext';
 import './styles/layout/layout.css'
 import './styles/layout/layout.header.css'
 import './styles/layout/layout.sidebar.css'
+import './styles/layout/layout.hamburger-menu-to-cross.css'
 //import './styles/layout/layout.nav-bar.css'
 
 
@@ -35,8 +36,8 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
 
   return (
     <>
-      <Header setShowSidebar={setShowSidebar}/>
-      {isTabletOrLarger && (
+      <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
+      {!isTabletOrLarger && (
         <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       )}
       <main className='site__main'>{children}</main>
@@ -45,9 +46,10 @@ export const Layout = ({children}: {children: React.ReactNode}) => {
 }
 
 interface IHeaderProps {
+  showSidebar: boolean
   setShowSidebar: react.Dispatch<react.SetStateAction<boolean>>, 
 }
-const Header = ({setShowSidebar}: IHeaderProps) => {
+const Header = ({showSidebar, setShowSidebar}: IHeaderProps) => {
   const slidesArr = useContext(ContentContext).slidesArr
   const isTabletOrLarger = useMediaQuery({minWidth : 700})
 
@@ -81,10 +83,10 @@ const Header = ({setShowSidebar}: IHeaderProps) => {
                   Contact
 
                   <div className='--contact-dropdown dropdown-menu'>
-                    <Link to="https://www.github.com/gullbra" className='--contact-link' title='Gullbra @ Github'> 
+                    <Link to="https://www.github.com/gullbra" className='--contact-link' title='Gullbra @ Github' target='blank'> 
                       <FontAwesomeIcon icon={faGithub} className="fa-icon-overrides-layout-header"/> 
                     </Link>
-                    <Link to="" className='--contact-link' title='Gullbra @ LinkedIn'> 
+                    <Link to="https://www.linkedin.com/in/martin-gullbrandsson" className='--contact-link' title='Gullbra @ LinkedIn' target='blank'> 
                       <FontAwesomeIcon icon={faLinkedin} className="fa-icon-overrides-layout-header"/> 
                     </Link>
                     {/* // TODO: Mail
@@ -95,9 +97,10 @@ const Header = ({setShowSidebar}: IHeaderProps) => {
                 </div>
               </>
             ) : (
-              <div className="--hamburger-btn" onClick={() => setShowSidebar((prev) => {return !prev})}>
-                ☰
-              </div>
+              // <div className="--hamburger-btn" onClick={() => setShowSidebar((prev) => {return !prev})}>
+              //   ☰
+              // </div>
+              <HamburgerMenuToCross showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
             )
           }
         </nav>
@@ -114,7 +117,9 @@ const Sidebar = ({showSidebar, setShowSidebar}: ISidebarProps) => {
   const slidesArr = useContext(ContentContext).slidesArr
 
   return(
-    <aside className={ showSidebar ? "site__sidebar --sidebar-open" : 'site__sidebar'}>
+    <aside className={`site__sidebar${showSidebar ? " --sidebar-open" : ''}`}>
+      {/* <p className='sidebar__close_button' onClick={() => setShowSidebar((prev) => {return !prev})}>X</p> */}
+
       {["home", ...slidesArr].map(slide => (
         <HashLink className='sidebar__element' to={`#${slide}-slide`} key={slide}
           scroll = {scrollWidthOffset}
@@ -136,6 +141,19 @@ const Sidebar = ({showSidebar, setShowSidebar}: ISidebarProps) => {
         </Link>
       </flex-wrapper>
     </aside>
+  )
+}
+
+const HamburgerMenuToCross = ({showSidebar, setShowSidebar}: ISidebarProps) => {
+  return (
+    <div className={`hamburger-menu-to-cross__wrapper${ showSidebar ? ' hamburger-menu-to-cross__open' : ''}`}
+      onClick={() => setShowSidebar((prev) => {return !prev})}
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   )
 }
 

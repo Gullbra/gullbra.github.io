@@ -1,5 +1,5 @@
 :root {
-  --height-about-info-box: 50rem;
+  --height-about-info-box: 53rem;
 
   --color-bg-about-slide: var(--color-green-light);
 
@@ -29,12 +29,12 @@
 }
 @media only screen and (min-width: 350px) {
   :root {
-    --height-about-info-box: 45rem;
+    --height-about-info-box: 46rem;
   }
 }
 @media only screen and (min-width: 400px) {
   :root {
-    --height-about-info-box: 40rem;
+    --height-about-info-box: 41rem;
   }
 }
 @media only screen and (min-width: 700px) {
