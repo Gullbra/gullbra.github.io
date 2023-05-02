@@ -1,6 +1,6 @@
 :root {
   --header-font-size-big: 2rem;
-  --header-font-size-small: 1.2rem;
+  --header-font-size-small: 2rem;
 }
 
 .layout__header {
@@ -32,6 +32,9 @@
 }
 .header__h1-name {
   font-size: var(--header-font-size-big); font-weight: 500;
+  font-family: var(--font-set-small-text); font-weight: 400;
+  font-family: var(--font-set-large-text);
+  font-size: 1.8rem;
 
   color: var(--color-green-light);
 }
@@ -59,7 +62,13 @@
   border: 1px solid transparent;
 
   font-family: var(--font-set-large-text); font-size: var(--header-font-size-small); font-weight: 400;
+  font-size: 1.2rem;
+  font-family: var(--font-set-small-text);
+
+  font-size: 1.4rem;
+  font-family: var(--font-set-large-text);
   text-decoration: none;
+  font-weight: 200;
 
   color: var(--color-green-light);
 }
@@ -67,20 +76,21 @@
   border-bottom: 1px solid white;
   color: white;
 
-  font-weight: 600;
+  /* font-weight: 600; */
 
   transition: border-bottom 0.5s ease-in-out, font-weight 0.5s ease-in-out;
 }
-.header-nav__contact-btn {
+/* .header-nav__contact-btn {
   margin-left: var(--header-font-size-big);
 
   font-family: var(--font-set-large-text); font-size: 1.8rem; font-weight: 500;
 }
+*/
 .header-nav__contact-btn:hover { 
   color: white;
 
-  cursor: help;
-}
+  cursor:default;
+} 
 
 .dropdown-container {
   position: relative;

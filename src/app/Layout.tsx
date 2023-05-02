@@ -79,7 +79,10 @@ const Header = ({showSidebar, setShowSidebar}: IHeaderProps) => {
                   </HashLink>
                 ))}
 
-                <div className="header-nav__contact-btn dropdown-container">
+                <div 
+                  className="header-nav__slide-links header-nav__contact-btn dropdown-container"
+                  //className='header-nav__slide-links'
+                >
                   Contact
 
                   <div className='--contact-dropdown dropdown-menu'>
